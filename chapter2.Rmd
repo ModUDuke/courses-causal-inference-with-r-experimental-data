@@ -113,8 +113,7 @@ To determine what price to set at the beginning of her WePhone auctions, Laurel 
 `@pre_exercise_code`
 
 ```{r}
-library(dplyr)
-library(data.table)
+library(plyr)
 # Initialize dataframe
     set.seed(1)
     n <- 100
