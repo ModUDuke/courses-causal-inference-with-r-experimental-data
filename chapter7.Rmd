@@ -166,7 +166,7 @@ Solution<-names(KatiePerrie)[which(p>=.05)+1]
 `@sct`
 
 ```{r}
-test_error()
+ex() %>% check_error()
 ex() %>% check_object("Solution") %>% check_equal()
 success_msg("Good work! Identifying balance is crucial to justifying natural experiments. Typically, if the treatment and control groups in a natural experiment are not balanced, scientists will instead try to subset the control group and treatment groups into balanced groups, and then assess the data.")
 ```
@@ -279,7 +279,7 @@ UpperBound2<-Test2$conf.int[2]
 `@sct`
 
 ```{r}
-test_error()
+ex() %>% check_error()
 ex() %>% check_object("UpperBound1") %>% check_equal()
 ex() %>% check_object("LowerBound1") %>% check_equal()
 ex() %>% check_object("LowerBound2") %>% check_equal()
@@ -468,8 +468,7 @@ t.test(CreditCo$balance_post[CreditCo$rainy==1],CreditCo$balance_post[CreditCo$r
 `@sct`
 
 ```{r}
-test_error()
-test_function("t.test", incorrect_msg = "Did you use the `t.test` function?")
+ex() %>% check_error()
 
 success_msg("Good work! It looks like rain may have influenced whether customers decided to take up CreditCo's offer to increase their credit limit.")
 ```
