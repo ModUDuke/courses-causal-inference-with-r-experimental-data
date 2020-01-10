@@ -139,7 +139,7 @@ Following an experiment regarding how computer keyboard layouts affect people's 
 - The maximum hand size in the treatment group is identical to the maximum hand size in the control group.
 - The third quartile hand size in the treatment group is identical to the third quartile hand size in the control group.
 - The median hand size in the treatment group is identical to the median hand size in the control group.
-- The mean hand size in the treatment group is identical to the mean hand size in the control group.
+- [The mean hand size in the treatment group is identical to the mean hand size in the control group.]
 
 `@pre_exercise_code`
 
@@ -169,15 +169,13 @@ boxplot(Treatment,Control,names=c("Treatment","Control"),main="Hand Sizes (inche
 ```
 
 
-`@sct`
+`@feedback`
 
-```{r}
-msg1 = "The maximum value in both plots is indicated by the line above the whiskers. These are identical. Try again."
-msg2 = "The third quartile in both plots is indicated by the top edge of the boxes. These are identical. Try again."
-msg3 = "The median value in both plots is indicated by the thick line within the box. These are identical. Try again."
-msg4 = "Correct! Box-and-whiskers plots do not show the mean values in a sample. Although these two plots have identical quartile distributions, medians, and ranges, the mean values are actually different (7.8 in the treatment and 7.5 in the control)."
-test_mc(correct = 4, feedback_msgs = c(msg1,msg2,msg3,msg4))
-```
+- The maximum value in both plots is indicated by the line above the whiskers. These are identical. Try again.
+- The third quartile in both plots is indicated by the top edge of the boxes. These are identical. Try again.
+- The median value in both plots is indicated by the thick line within the box. These are identical. Try again.
+- Correct! Box-and-whiskers plots do not show the mean values in a sample. Although these two plots have identical quartile distributions, medians, and ranges, the mean values are actually different (7.8 in the treatment and 7.5 in the control).
+
 
 
 ---
@@ -260,7 +258,7 @@ Solution1<-mean(Reviews_Before)-mean(Reviews_After)
 `@sct`
 
 ```{r}
-test_error()
+ex() %>% check_error()
 ex() %>% check_object("Solution1") %>% check_equal()
 ex() %>% check_object("Solution3") %>% check_equal()
 
@@ -335,8 +333,7 @@ Reviews_Before<-ifelse(Reviews_Before==1 | Reviews_Before==2,1,Reviews_Before)
 `@sct`
 
 ```{r}
-test_error()
-test_function("t.test", incorrect_msg = "Did you use the `t.test` function?")
+ex() %>% check_error()
 
 success_msg("Good work! If we assume that the difference in respondent's degrees of positive or negative feelings towards the restaurant are non-meaningful, we can conclude that Hannity's restaurant revival is effective (i.e. it increases the number of postive versus negative reviews). If the degree of positive or negative feelings towards restaurants are meaningful, then we do not have enough information to reject the null hypothesis (i.e. evidence does not support the claim that Hannity's contributions leads restaurants to get better reviews")
 ```
@@ -441,7 +438,7 @@ Solution3<-mean(eGulf$Final_Sales_Price[eGulf$Treatment==1])-mean(eGulf$Final_Sa
 `@sct`
 
 ```{r}
-test_error()
+ex() %>% check_error()
 ex() %>% check_object("Solution1") %>% check_equal()
 ex() %>% check_object("Solution3") %>% check_equal()
 success_msg("Good work! When you removed the outliers from the data, the mean difference was much smaller between the treatment and control group. This is a problem that comes up often in data analysis.")
