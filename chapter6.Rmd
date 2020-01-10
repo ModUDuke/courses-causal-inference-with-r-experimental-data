@@ -117,8 +117,7 @@ Solution3<- mean(UnterHR$LeaveJob[UnterHR$Treatment==1])-mean(UnterHR$LeaveJob[U
 `@sct`
 
 ```{r}
-test_error()
-test_function("mean", incorrect_msg = "Did you use the `mean` function?")
+ex() %>% check_error()
 ex() %>% check_object("Solution3") %>% check_equal()
 
 success_msg("Good work! It seems that reducing the size of HR also reduced Unter employees' intentions to leave their jobs by about 7%.")
@@ -143,8 +142,8 @@ Since reducing the size of HR seems to reduce the rate of employee turnover, the
 However, his chief operating officer (COO) warns him that reducing the size of HR might be unpopular among certain minority groups within the company, particularly among women. The COO sends the CEO a figure (illustrated in the R workspace) showing the results of his experiment among men and women. Which of the following does the figure suggest?
 
 
-`@instructions`
-- While the pooled average treatment effect is slightly negative, and the average treatment effect for men is negative, the average treatment effect for women is positive.
+`@possible_answers`
+- [While the pooled average treatment effect is slightly negative, and the average treatment effect for men is negative, the average treatment effect for women is positive.]
 - While the pooled average treatment effect is slightly positive, and the average treatment effect for men is positive, the average treatment effect for women is negative.
 - While the pooled average treatment effect is slightly negative, and the average treatment effect for men is positive, the average treatment effect for women is negative.
 - While the pooled average treatment effect is slightly positive, and the average treatment effect for men is negative, the average treatment effect for women is positive.
@@ -185,15 +184,12 @@ p<-ggplot(df, aes(x=`Control and Treatment Groups`,y=`Percent Intending to Quit`
 ```
 
 
-`@sct`
+`@feedback`
 
-```{r}
-msg1 = "Good job! This is an example of a heterogeneous average treatment effect - the treatment has different effects on men and women. However, when men and women are pooled, this heterogeneity is masked."
-msg2 = "Whoa! While you're right that there are different effects for men and for women, it looks like you're confused about which effects are negative and which are positive.  Try again."
-msg3 = "While you're right that the pooled effects are negative and there are different effects for men and for women, it looks like you're confused about which gender-specific effects are negative and which are positive. Look again."
-msg4 = "You're right about the gender-specific effects, but not the pooled effects. Check your results again."
-test_mc(correct = 1, feedback_msgs = c(msg1,msg2,msg3,msg4))
-```
+- Good job! This is an example of a heterogeneous average treatment effect - the treatment has different effects on men and women. However, when men and women are pooled, this heterogeneity is masked.
+- Whoa! While you're right that there are different effects for men and for women, it looks like you're confused about which effects are negative and which are positive.  Try again.
+- While you're right that the pooled effects are negative and there are different effects for men and for women, it looks like you're confused about which gender-specific effects are negative and which are positive. Look again.
+- You're right about the gender-specific effects, but not the pooled effects. Check your results again.
 
 
 ---
@@ -271,7 +267,7 @@ Solution2 <- mean(UnterHR$LeaveJob[UnterHR$Treatment==1 & UnterHR$Female==1])-me
 `@sct`
 
 ```{r}
-test_error()
+ex() %>% check_error()
 ex() %>% check_object("Solution1") %>% check_equal()
 ex() %>% check_object("Solution2") %>% check_equal()
 
@@ -541,10 +537,7 @@ t.test(econometrics$Happiness[econometrics$Treatment==1],econometrics$Happiness[
 `@sct`
 
 ```{r}
-test_error()
-test_function("str", incorrect_msg = "Did you use the `str` function?")
-test_function("cor", incorrect_msg = "Did you use the `cor` function?")
-test_function("t.test", incorrect_msg = "Did you use the `t.test` function?")
+ex() %>% check_error()
 
 
 success_msg("Good work! While proxy variables can be an extremely useful tool for causal inference, they should be used carefully. If a proxy dependent variable has a very different relationship with the treatment effect than the outcome of interest, it can induce spurious results.")
