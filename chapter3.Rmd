@@ -43,7 +43,7 @@ key: 2e74d95e94
 Why might it be risky to implement a policy that has an that has average treatment effect with a confidence interval that overlaps with zero?
 
 
-`@instructions`
+`@possible_answers`
 - Because the confidence interval equation defaults to 0 with large amounts of data.
 - [Because having zero in one's confidence interval implies that a treatment effect could have a positive or negative effect on the outcome of interest.]
 - Because having zero in one's confidence interval implies that a treatment effect has no effect.
