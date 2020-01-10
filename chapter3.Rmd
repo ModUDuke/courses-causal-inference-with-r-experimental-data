@@ -287,7 +287,7 @@ An easy way to identify whether the variability of a dependent variable is unequ
 
 `@instructions`
 - Education
-- Age
+- [Age]
 - City Population
 
 `@pre_exercise_code`
@@ -331,14 +331,14 @@ plot(Sample$City_Population,Sample$Income)
 ```
 
 
-`@sct`
+`@feedback`
 
-```{r}
-msg1 = "Almost, try again."
-msg2 = "Good job! This is an example of a heteroskedastic treatment effect. Among our sample, income was slightly correlated with age, but only varied slightly until respondents reached their late 50s. If we were to ignore this trend while studying the relationship between age and income, it could confound or bias our results."
-msg3 = "Almost, try again."
-test_mc(correct = 2, feedback_msgs = c(msg1,msg2,msg3))
-```
+
+- Almost, try again.
+- Good job! This is an example of a heteroskedastic treatment effect. Among our sample, income was slightly correlated with age, but only varied slightly until respondents reached their late 50s. If we were to ignore this trend while studying the relationship between age and income, it could confound or bias our results.
+- Almost, try again.
+
+
 
 
 ---
@@ -462,8 +462,7 @@ ControlGroup <- OHIE[OHIE$treatment==0, ]
 `@sct`
 
 ```{r}
-test_error()
-test_function("str", incorrect_msg = "Did you use the `str` function?")
+ex() %>% check_error()
 ex() %>% check_object("TreatmentGroup") %>% check_equal()
 ex() %>% check_object("ControlGroup") %>% check_equal()
 
@@ -539,8 +538,7 @@ Solution2<-ifelse(sign(Solution1$conf.int[1])==sign(Solution1$conf.int[2]),"Yes"
 `@sct`
 
 ```{r}
-test_error()
-test_function("t.test", incorrect_msg = "Did you use the `t.test` function?")
+ex() %>% check_error()
 ex() %>% check_object("Solution2") %>% check_equal()
 success_msg("Good work! Since there is no significant difference in rates of gender between the treatment and control groups, we assume the groups are balanced on gender.")
 ```
@@ -618,9 +616,7 @@ Solution3<-ifelse(Solution2$p.value<.05,"Yes","No")
 `@sct`
 
 ```{r}
-test_error()
-test_function("mean", incorrect_msg = "Did you use the `mean` function?")
-test_function("t.test", incorrect_msg = "Did you use the `t.test` function?")
+ex() %>% check_error()
 ex() %>% check_object("Solution3") %>% check_equal()
 
 success_msg("Good work. The high p-value means that the estimate is not statistically significan, which is not what we were hoping for. Let's see if that's also true of the treatment effect on diastolic blood pressure.")
@@ -692,8 +688,7 @@ Solution2<-ifelse(Solution1$p.value<.05,"Yes","No")
 `@sct`
 
 ```{r}
-test_error()
-test_function("t.test", incorrect_msg = "Did you use the `t.test` function?")
+ex() %>% check_error()
 ex() %>% check_object("Solution2") %>% check_equal()
 
 success_msg("Good work. Our estimate for the treatment effect on diastolic blood pressure had a p-value under .05, so we will say that it's statistically significant. Because some of our estimates were not statistically significant, and some are, we probably will need to work a little harder before we can conclude that our experiment suggests that the Medicaid program should be expanded.")
@@ -779,9 +774,7 @@ t.test(eGulf$Final_Sales_Price[eGulf$Seller_Opted_Into_Treatment==1],eGulf$Final
 `@sct`
 
 ```{r}
-test_error()
-test_function("str", incorrect_msg = "Did you use the `str` function?")
-test_function("t.test", incorrect_msg = "Did you use the `t.test` function?")
+ex() %>% check_error()
 
 success_msg("Good work! Since the p-value is well below .05, it seems that our finding is robust; likely posting more photos was positively associated with final WePhone sales prices.")
 ```
