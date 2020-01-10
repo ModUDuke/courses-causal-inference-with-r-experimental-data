@@ -222,7 +222,7 @@ Solution3<-max(Ratios)
 `@sct`
 
 ```{r}
-test_error()
+ex() %>% check_error()
 ex() %>% check_object("Solution1") %>% check_equal()
 ex() %>% check_object("Solution2") %>% check_equal()
 ex() %>% check_object("Solution3") %>% check_equal()
