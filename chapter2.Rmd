@@ -170,9 +170,8 @@ str(WePhones)
 `@sct`
 
 ```{r}
-test_error()
-test_function("str", incorrect_msg = "Did you use the `str` function?")
-test_function("mean", incorrect_msg = "Did you use the `mean` function?")
+ex() %>% check_error()
+
 
 
 success_msg("Good work! Exploring your new data before diving into deeper questions is a critical step for conducting statistical analyses. The number of Black and White WePhones in the previous question looked different, but are they? Let's do the next question to find out!")
@@ -277,8 +276,7 @@ for(i in 2:6){
 `@sct`
 
 ```{r}
-test_error()
-test_function("t.test", incorrect_msg = "Did you use the `t.test` function?")
+ex() %>% check_error()
 ex() %>% check_object("Solution1") %>% check_equal()
 
 success_msg("Good work! The methods for computing balance in this exercise are very common to experimental research. While we walked you through the steps this time, some of the later problems will be less guided. You may want to return to this exercise and look at how we computed imbalance if you ever get stuck in later ones.")
@@ -402,10 +400,7 @@ plot(density(Commute))
 `@sct`
 
 ```{r}
-test_error()
-test_function("summary", incorrect_msg = "Did you use the `summary` function?")
-test_function("plot", incorrect_msg = "Did you use the `plot` function?")
-test_function("density", incorrect_msg = "Did you use the `density` function?")
+ex() %>% check_error()
 
 success_msg("Good job!  The Y axis, marked 'density', shows the proportion of times that Donny's travel time is a certain length, given by the x-axis. Based on Donny's previous commutes, about .08 or 8% of the time, Donny's travel takes exactly 9 minutes. Let's continue on this problem by trying to find a reasonable confidence interval that Donny should consider to give himself a safe time margin.")
 ```
@@ -478,7 +473,7 @@ Solution2<-t.test(Commute)$conf.int[2] #upper bound
 `@sct`
 
 ```{r}
-test_error()
+ex() %>% check_error()
 ex() %>% check_object("Solution1") %>% check_equal()
 ex() %>% check_object("Solution2") %>% check_equal()
 
