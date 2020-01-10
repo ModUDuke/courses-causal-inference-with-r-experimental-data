@@ -149,7 +149,7 @@ Solution3 <- Solution1*mean(CreditCo$default_post[CreditCo$opt_in==1]) + (1-Solu
 `@sct`
 
 ```{r}
-test_error()
+ex() %>% check_error()
 ex() %>% check_object("Solution1") %>% check_equal()
 ex() %>% check_object("Solution2") %>% check_equal()
 ex() %>% check_object("Solution3") %>% check_equal()
@@ -319,11 +319,9 @@ summary(KittyCatch$DistanceWalked)
 `@sct`
 
 ```{r}
-test_error()
-test_function("str", incorrect_msg = "Did you use the `str` function?")
+ex() %>% check_error()
 ex() %>% check_object("Solution2") %>% check_equal()
-test_function("mean", incorrect_msg = "Did you use the `mean` function?")
-test_function("summary", incorrect_msg = "Did you use the `summary` function?")
+
 
 success_msg("Great Job! Notice that the maximum value is much larger than the mean, median, and 3rd quartile of the dataset. This outlier might bias our t-test results by violating its assumption that the data is normally distributed.")
 ```
@@ -445,10 +443,7 @@ plot(density(KittyCatch$DistanceWalked))
 `@sct`
 
 ```{r}
-test_error()
-test_function("plot", incorrect_msg = "Did you use the `plot` function?")
-test_function("head", incorrect_msg = "Did you use the `head` function?")
-test_function("ifelse", incorrect_msg = "Did you use the `ifelse` function?")
+ex() %>% check_error()
 
 success_msg("Nice work so far!")
 ```
@@ -575,10 +570,7 @@ t.test(KittyCatch$Age[KittyCatch$Treatment==0],KittyCatch$Age[KittyCatch$Treatme
 `@sct`
 
 ```{r}
-test_error()
-test_function("boxplot", incorrect_msg = "Did you use the `boxplot` function?")
-test_function("cor", incorrect_msg = "Did you use the `cor` function?")
-test_function("t.test", incorrect_msg = "Did you use the `t.test` function?")
+ex() %>% check_error()
 
 success_msg("Great! We've made a lot of progress, so let's look further at the quality of our data.")
 ```
@@ -710,11 +702,7 @@ KittyCatch<-KittyCatch[!is.na(KittyCatch$TotalHoursPlayed),]
 `@sct`
 
 ```{r}
-test_error()
-test_function("summary", incorrect_msg = "Did you use the `summary` function?")
-test_function("cor", incorrect_msg = "Did you use the `cor` function?")
-test_function("is.na", incorrect_msg = "Did you use the `is.na` function?")
-test_function("t.test", incorrect_msg = "Did you use the `t.test` function?")
+ex() %>% check_error()
 
 success_msg("Whew! We've explored the data, dealt with the issues, and now we can finally calculate the treatment effect of our experiment!")
 ```
@@ -826,7 +814,7 @@ Solution1<-mean(KittyCatch$DistanceWalked[KittyCatch$Treatment==1])-mean(KittyCa
 `@sct`
 
 ```{r}
-test_error()
+ex() %>% check_error()
 ex() %>% check_object("Solution1") %>% check_equal()
 ex() %>% check_object("Solution3") %>% check_equal()
 success_msg("Good work! Hooray!! Our naive estimate of the average treatment effect was opposite our estimate after we tried to balance the data. However, we had to ignore a large fraction of our observations to get to that conclusion. This is the difficulty of computing conditional average treatment effects with t-tests. However, this problem can be sidestepped with regression models. Our next module teaches how to use regression models in detail.")
