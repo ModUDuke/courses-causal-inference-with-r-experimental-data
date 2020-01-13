@@ -331,12 +331,13 @@ plot(Sample$City_Population,Sample$Income)
 ```
 
 
-`@feedback`
+`@sct`
+msg1="Almost, try again." 
+msg2="Good job! This is an example of a heteroskedastic treatment effect. Among our sample, income was slightly correlated with age, but only varied slightly until respondents reached their late 50s. If we were to ignore this trend while studying the relationship between age and income, it could confound or bias our results." 
+msg3="Almost, try again." 
+ex() %>% check_mc(2, feedback_msgs = c(msg1, msg2, msg3))
 
 
-- Almost, try again.
-- Good job! This is an example of a heteroskedastic treatment effect. Among our sample, income was slightly correlated with age, but only varied slightly until respondents reached their late 50s. If we were to ignore this trend while studying the relationship between age and income, it could confound or bias our results.
-- Almost, try again.
 
 
 
