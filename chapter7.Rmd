@@ -147,6 +147,8 @@ KatiePerrie$Age<-round(ifelse(KatiePerrie$Treatment==0,rtnorm(n,mean=40,sd=10,mi
 # 3) Now it's time to be a terrible scientist and base all of our claims on a single balanced variable: name the single variable that is balanced between the treatment and control groups and assign it to Solution. 
 
     Solution<-""
+    
+    
 ```
 
 
@@ -258,6 +260,8 @@ SeaOtter<-data.frame(treatment=c(0,1,0,1,0,1),audience=c(20,30,14,24,22,27))
 # 5) Use the Test2 object to assign the upper bound of the confidence interval.
       
     UpperBound2<-
+    
+    
 ```
 
 
@@ -453,6 +457,8 @@ library(dplyr)
 # 3) Run a t-test to estimate the average treatment effect of rain (`rainy`) on post-offer credit balances (`balance_post`), regardless of whether they were offered the balance increase.
     
     t.test()
+    
+    
 ```
 
 
