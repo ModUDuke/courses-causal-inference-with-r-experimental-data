@@ -112,11 +112,13 @@ colnames(eGulf) <- c("Seller_Offered_Treatment","Seller_Opted_Into_Treatment","S
 `@sample_code`
 
 
-`@feedback`
-- Do the error bars overlap? Look carefully at the graph and try again.
-- The graph does not show error bars for the 99% confidence interval, so no conclusion can be made about the statistical significance of the ATE at the 99% confidence interval. Try again.
-- Correct! Since the 95% confidence interval error bars do not appear to overlap, we can conclude that the difference is statistically significant at the 95% confidence level.
-- The graph does not show error bars for the 99% confidence interval, so no conclusion can be made about the statistical significance of the ATE at the 99% confidence interval. Try again.
+`@sct`
+msg1="Do the error bars overlap? Look carefully at the graph and try again."
+msg2="YThe graph does not show error bars for the 99% confidence interval, so no conclusion can be made about the statistical significance of the ATE at the 99% confidence interval. Try again."
+msg3="Correct! Since the 95% confidence interval error bars do not appear to overlap, we can conclude that the difference is statistically significant at the 95% confidence level."
+msg4="The graph does not show error bars for the 99% confidence interval, so no conclusion can be made about the statistical significance of the ATE at the 99% confidence interval. Try again."
+ex() %>% check_mc(3, feedback_msgs = c(msg1, msg2, msg3, msg4))
+
 
 
 ---
@@ -401,6 +403,8 @@ library(dplyr)
 # 3) Compute a naive average treatment effect of late payment (variable `default_post`), where treatment state is defined by having been offered **and** opted in to the program. 
     
     Solution3<- mean()
+    
+    
 ```
 
 
