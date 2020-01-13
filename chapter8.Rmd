@@ -134,6 +134,8 @@ library(dplyr)
     Solution3<-
 
 # Bonus: Compare this with the results of an intention-to-treat analysis, under random compliance, or both!
+
+
 ```
 
 
@@ -548,6 +550,8 @@ n=688
 # 5) If you completed question 4 correctly, Age among the treatment and control groups should now be balanced. Run the t-test from Question 3 again to see if the two groups are now balanced on Age.
     
     t.test()
+    
+    
 ```
 
 
@@ -679,6 +683,8 @@ n=688
 # 5) A simple, albeit imperfect, solution to this problem is listwise deletion; that is, removing respondents from our sample who did not report their total hours played. Subset KittyCatch to respondents who reported their total hours played. The syntax for this will be:
     
     KittyCatch<-dataframe[!is.na(dataframe$variable),].
+    
+    
 ```
 
 
@@ -799,6 +805,8 @@ n=688
 # 3) Is the p-value of a t-test less than .05? We will use as our standard of significance. Assign Solution3 with "Yes" or "No".
 
     Solution3<-""
+    
+    
 ```
 
 
