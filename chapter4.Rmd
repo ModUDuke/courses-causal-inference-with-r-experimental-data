@@ -168,12 +168,13 @@ boxplot(Treatment,Control,names=c("Treatment","Control"),main="Hand Sizes (inche
 ```
 
 
-`@feedback`
+`@sct`
+msg1="The maximum value in both plots is indicated by the line above the whiskers. These are identical. Try again."
+msg2="The third quartile in both plots is indicated by the top edge of the boxes. These are identical. Try again."
+msg3="The median value in both plots is indicated by the thick line within the box. These are identical. Try again."
+msg4="UCorrect! Box-and-whiskers plots do not show the mean values in a sample. Although these two plots have identical quartile distributions, medians, and ranges, the mean values are actually different (7.8 in the treatment and 7.5 in the control)."
+ex() %>% check_mc(4, feedback_msgs = c(msg1, msg2, msg3, msg4))
 
-- The maximum value in both plots is indicated by the line above the whiskers. These are identical. Try again.
-- The third quartile in both plots is indicated by the top edge of the boxes. These are identical. Try again.
-- The median value in both plots is indicated by the thick line within the box. These are identical. Try again.
-- Correct! Box-and-whiskers plots do not show the mean values in a sample. Although these two plots have identical quartile distributions, medians, and ranges, the mean values are actually different (7.8 in the treatment and 7.5 in the control).
 
 
 
@@ -241,6 +242,8 @@ Reviews_After<-sample(c(rep(1,37),rep(2,4),rep(3,26),rep(4,44),rep(5,14)))
 # 3) Use the Previous Plot and Next Plot buttons to cycle between the two graphs. Do these these look approximately normally distributed? Answer with "Yes" or "No."
     
     Solution3<-""
+    
+    
 ```
 
 
@@ -313,6 +316,7 @@ Reviews_After<-sample(c(rep(1,37),rep(2,4),rep(3,26),rep(4,44),rep(5,14)))
 # 2): Now that you have rescaled the Reviews_After variable, run a t-test between the Reviews_After and Reviews_Before variables.
       
     t.test()
+    
 ```
 
 
@@ -422,6 +426,8 @@ colnames(eGulf) <- c("Seller_Feedback_Count","Seller_Feedback_Score")
 # 3) Now that you have subsetted the data, calculate the mean difference in final sales prices between the treatment and control groups (i.e. mean of treatment 0 mean of control).
       
     Solution3<-
+    
+   
 ```
 
 
