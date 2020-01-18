@@ -150,10 +150,14 @@ library(plyr)
 # 2) Notice that each variable is a factor with two levels. For ease of computation, let's subset the WePhones dataframe into two new dataframes, one for WePhones in the treatment, and one for WePhones in the control. We provide syntax for creating how to make a dataframe of just the treatment group. Use this example to create a dataframe for just the control titled `Control`
 
     Treatment<-WePhones[WePhones$Treatment==1,]
+    Control<-
 
-# 3) Now, let's calculate the percent of phones in the treatment group and control group that are "Black". We provide an example of how to do this for the Treatment group.
+# 3) Now, let's calculate the percent of phones in the treatment group and control group that are "Black". We provide an example of how to do this for the Treatment group. Use this example for our `Control` dataframe:
     
     mean(Treatment$Color=="Black")
+    mean()
+    
+# This is one way we can examine the means in both groups.
     
 ```
 
@@ -171,7 +175,7 @@ str(WePhones)
 
 ```{r}
 ex() %>% check_error()
-
+ex() %>% check_object("Control") %>% check_equal()
 
 
 success_msg("Good work! Exploring your new data before diving into deeper questions is a critical step for conducting statistical analyses. The number of Black and White WePhones in the previous question looked different, but are they? Let's do the next question to find out!")
@@ -202,7 +206,9 @@ Using the data frame `WePhones`:
 
 `@instructions`
 - 1) Use the `t.test` function to find out if the `Treatment` and `Control` groups have the same number of `Black` WePhones.
-- 2) If that is statistically balanced, examine the data frame to find any variable that is imbalanced between the`Treatment` and `Control` groups.
+- 2) If that is statistically balanced, look at the names of all of the variables in our dataframes.
+- 3) Manually examine the data frames to find any variable that is imbalanced between the`Treatment` and `Control` groups.
+- 4) Write down the name of the imbalanced variable.
 
 `@pre_exercise_code`
 
@@ -251,9 +257,22 @@ library(data.table)
 
 # The t-test shows a difference in the number of black phones in each group, but is that difference statistically significant? Take a look at the p-value. Because the p-value is 0.46, which is well above .05, we can say that the difference is not statistically significant.
 
-# 2) So are there any variables that show a statistically significant amount of imbalance? Use the `t.test` function to search through each variable in the `Treatment and `Control` groups until you find one that is imbalanced (i.e. where the probability that the mean difference between the specification in the treatment and control groups is less than 0.05). Write the name of the unbalanced trait between control and treatment groups into Solution1.
+# 2) So are there any variables that show a statistically significant amount of imbalance? To find out, let's first remind ourselves what variables are in these dataframes with the str() command:
+
+    str(Treatment)
+    
+# 3) Now use the `t.test` function to search through each variable in the `Treatment and `Control` groups until you find one that is imbalanced (i.e. where the probability that the mean difference between the specification in the treatment and control groups is less than 0.05). 
 
     t.test(  )
+    
+    
+    
+    
+    
+    
+    
+ # 4) Now write the name of the unbalanced trait between control and treatment groups into Solution1.
+    
     Solution1<-""
     
 # Note: Again, the number we are looking for is listed in the second line of results with the label `t =`. That's the difference in the means of our two variables (while accounting for any different variances in the two groups). 
@@ -298,7 +317,7 @@ key: 6ae426b824
 
 Under which scenario might an experimenter *not* need to use statistical inference to justify causal claims?
 
-
+    
 `@possible_answers`
 - When his causal claim is logically sound.
 - When his sample is large.
