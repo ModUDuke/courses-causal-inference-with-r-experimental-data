@@ -257,7 +257,7 @@ library(data.table)
 
 # The t-test shows a difference in the number of black phones in each group, but is that difference statistically significant? Take a look at the p-value. Because the p-value is 0.46, which is well above .05, we can say that the difference is not statistically significant.
 
-# 2) So are there any variables that show a statistically significant amount of imbalance? To find out, we will first remind ourselves what variables are in these dataframes with the str() command:
+# 2) So are there any variables that show a statistically significant amount of imbalance? To find out, let's first remind ourselves what variables are in these dataframes with the str() command:
 
     str(Treatment)
     
