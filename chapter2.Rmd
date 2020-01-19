@@ -202,9 +202,7 @@ Using the data frame `WePhones`:
 
 `@instructions`
 - 1) Use the `t.test` function to find out if the `Treatment` and `Control` groups have the same number of `Black` WePhones.
-- 2) If that is statistically balanced, look at the names of all of the variables in our dataframes.
-- 3) Manually examine the data frames to find any variable that is imbalanced between the `Treatment` and `Control` groups.
-- 4) Write down the name of the imbalanced variable.
+- 2) If that is statistically balanced, examine the data frame to find any variable that is imbalanced between the`Treatment` and `Control` groups.
 
 `@hint`
 
