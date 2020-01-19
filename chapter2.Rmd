@@ -108,7 +108,7 @@ Laurel has saved all of the wePhones that she has broken and she now wants to au
 To determine what price to set at the beginning of her WePhone auctions, Laurel conducts a new experiment: Laurel grabs a random sample of broken WePhones from her closet, and randomly assigns them to a treatment group (WePhones to be base priced at $10), and a control group (WePhones to be base priced at $5). Laurel's end goal is to determine whether her sample is unbalanced. Using the dataframe `WePhones`:
 
 `@instructions`
-- 1) Take a look at the structure of dataframe `WePhones` with the "str" function.
+- 1) Take a look at the structure of dataframe `WePhones` with the `str` function.
 - 2) Subset the WePhones dataframe into two new dataframes, one for `WePhones` in the treatment, titled `Treatment` and one for WePhones in the control titled `Control`.
 - 3) Calculate the percent of phones in the treatment group and control group that are "Black" with the mean function.
 
@@ -254,7 +254,7 @@ library(data.table)
 
 # 2) So are there any variables that show a statistically significant amount of imbalance? To find out, let's first remind ourselves what variables are in these dataframes with the str() command.
 
-    str(Treatment)
+    str()
     
 # 3) Now use the `t.test` function to search through each variable in the `Treatment and `Control` groups until you find one that is imbalanced (i.e. where the probability that the mean difference between the specification in the treatment and control groups is less than 0.05). 
 
