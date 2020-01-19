@@ -154,7 +154,7 @@ library(plyr)
     Treatment<-WePhones[WePhones$Treatment==1,]
     Control<-
 
-# 3) Now, we will calculate the percent of phones in the treatment group and control group that are "Black". We provide an example of how to do this for the Treatment group. Use this example for our `Control` dataframe.
+# 3) Now, we will calculate the percent of phones in the treatment group and control group that are "Black". We provide an example of how to do this for the Treatment group. Use this sample code again for our `Control` dataframe.
     
     mean(Treatment$Color=="Black")
     mean()
@@ -167,6 +167,7 @@ library(plyr)
 ```{r}
 str(WePhones) 
     Control<-WePhones[WePhones$Treatment==0,]
+    mean(Treatment$Color=="Black")
     mean(Control$Color=="Black")
 ```
 
@@ -252,17 +253,19 @@ library(data.table)
 
 # The t-test shows a difference in the number of black phones in each group, but is that difference statistically significant? Take a look at the p-value. Because the p-value is 0.46, which is well above .05, we can say that the difference is not statistically significant.
 
-# 2) So are there any variables that show a statistically significant amount of imbalance? To find out, let's first remind ourselves what variables are in these dataframes with the str() command.
+# 2) So are there any variables that show a statistically significant amount of imbalance? To find out, let's first remind ourselves what variables are in these dataframes with the `str()` command.
 
     str()
     
 # 3) Now use the `t.test` function to search through each variable in the `Treatment and `Control` groups until you find one that is imbalanced (i.e. where the probability that the mean difference between the specification in the treatment and control groups is less than 0.05). 
 
-    t.test()
-    t.test()
-    t.test()
-    t.test()
-    t.test()
+
+
+
+
+
+
+
 
 # 4) Now write the name of the variable that is imbalanced between the control and treatment groups into Solution1.
     
