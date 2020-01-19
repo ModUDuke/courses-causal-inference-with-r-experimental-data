@@ -245,21 +245,32 @@ library(data.table)
 
 `@sample_code`
 ```{r}
-# 1) Use the `t.test` function to find out if the `Treatment` and `Control` groups have the same proportion of `Black` WePhones. Replace the `x` and `y` in the following example with, `Treatment$Color=="Black"` and `Control$Color=="Black"` respectively.
+# 1) Use the `t.test` function to find out if the `Treatment` and `Control` groups have the same proportion of `Black` WePhones. Replace the `x` and `y` in the following example with `Treatment$Color=="Black"` and `Control$Color=="Black"` respectively.
 
     t.test(x,y)
-    
+
 # The t.test function in R returns quite a lot of results, and the number we are looking for is listed in the second line of results with the label `t =`. That's the difference in the means of our two variables (while accounting for any different variances in the two groups). 
 
-# The t-test shows a difference in the number of black phones in each group, but is that difference statistically significant? Take a look at the p-value. Because the p-value is 0.46, which is well above .05, we can say that the difference is not statistically significant.
+# The t-test shows a difference in the number of black phones in each group, but is that difference statistically significant? Take a look at the p-value. Because the p-value is 0.46, which is well above .05, we can say that the difference is **NOT** statistically significant.
 
-# 2) So are there any variables that show a statistically significant amount of imbalance? Use the `t.test` function to search through each variable in the `Treatment and `Control` groups until you find one that is imbalanced (i.e. where the probability that the mean difference between the specification in the treatment and control groups is less than 0.05). Write the name of the unbalanced trait between control and treatment groups into Solution1.
+# 2) So are there any variables that show a statistically significant amount of imbalance? To find out, let's first remind ourselves what variables are in these dataframes with the `str` command.
 
-    t.test(  )
-    Solution1<-""
+    str()
     
+# 3) Now use the `t.test` function to search through each variable in the `Treatment and `Control` groups until you find one that is imbalanced (i.e. where the probability that the mean difference between the specification in the treatment and control groups is less than 0.05). Here are a few blank lines to type in all of those commands, and be sure to hit the `Run Code` button in the browser to see the results.
+
+
+
+
+
+
+
 # Note: Again, the number we are looking for is listed in the second line of results with the label `t =`. That's the difference in the means of our two variables (while accounting for any different variances in the two groups). 
+
+# 4) Based on the results of these t-tests, write the name of the variable that is imbalanced between the control and treatment groups into Solution1.
     
+    Solution1<-""
+
 ```
 
 `@solution`
