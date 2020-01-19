@@ -145,7 +145,7 @@ library(plyr)
 
 `@sample_code`
 ```{r}
-# 1) We will practice identifying whether the treatment and control are different for Color. First, take a look at the structure of the dataframe with the "str" function. Insert the word `WePhones` in between the () in the structure function below:
+# 1) We will practice identifying whether the treatment and control are different for Color. First, take a look at the structure of the dataframe with the `str` function. Insert the word `WePhones` in the structure function below:
 
     str() 
 
