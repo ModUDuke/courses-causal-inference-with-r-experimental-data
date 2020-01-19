@@ -145,16 +145,16 @@ library(plyr)
 
 `@sample_code`
 ```{r}
-# 1) We will practice identifying whether the treatment and control are different for Color. First, take a look at the structure of the dataframe with the `str` function. Insert the word `WePhones` in the structure function below:
+# 1) We will practice identifying whether the treatment and control are different for Color. First, take a look at the structure of the dataframe with the `str` function. Insert the word `WePhones` in the structure function below.
 
     str() 
 
-# 2) Notice that each variable is a factor with two levels. For ease of computation, we will subset the WePhones dataframe into two new dataframes, one for WePhones in the treatment, and one for WePhones in the control. We provide syntax for creating how to make a dataframe of just the treatment group. Use this example to create a dataframe for just the control titled `Control`:
+# 2) Notice that each variable is a factor with two levels. For ease of computation, we will subset the WePhones dataframe into two new dataframes, one for WePhones in the treatment, and one for WePhones in the control. We provide syntax for creating how to make a dataframe of just the treatment group. Use this example to create a dataframe for just the control titled `Control`.
 
     Treatment<-WePhones[WePhones$Treatment==1,]
     Control<-
 
-# 3) Now, we will calculate the percent of phones in the treatment group and control group that are "Black". We provide an example of how to do this for the Treatment group. Use this example for our `Control` dataframe:
+# 3) Now, we will calculate the percent of phones in the treatment group and control group that are "Black". We provide an example of how to do this for the Treatment group. Use this example for our `Control` dataframe.
     
     mean(Treatment$Color=="Black")
     mean()
@@ -252,7 +252,7 @@ library(data.table)
 
 # The t-test shows a difference in the number of black phones in each group, but is that difference statistically significant? Take a look at the p-value. Because the p-value is 0.46, which is well above .05, we can say that the difference is not statistically significant.
 
-# 2) So are there any variables that show a statistically significant amount of imbalance? To find out, let's first remind ourselves what variables are in these dataframes with the str() command:
+# 2) So are there any variables that show a statistically significant amount of imbalance? To find out, let's first remind ourselves what variables are in these dataframes with the str() command.
 
     str(Treatment)
     
