@@ -259,14 +259,12 @@ library(data.table)
 # 3) Now use the `t.test` function to search through each variable in the `Treatment and `Control` groups until you find one that is imbalanced (i.e. where the probability that the mean difference between the specification in the treatment and control groups is less than 0.05). 
 
     t.test(  )
-    
-    
-    
-    
-    
-    
-    
-# 4) Now write the name of the unbalanced trait between control and treatment groups into Solution1.
+
+
+
+
+
+# 4) Now write the name of the variable that is imbalanced between the control and treatment groups into Solution1.
     
     Solution1<-""
     
