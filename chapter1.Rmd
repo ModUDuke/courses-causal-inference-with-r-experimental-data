@@ -1,19 +1,19 @@
 ---
-title: 'Introduction'
+title: Introduction
 description: 'We introduce how experiments help us find causal connections, and take a quick look at controlled experiments.'
 ---
-
 
 ## Course Trailer for Causal Inference with R - Experiments
 
 ```yaml
-type: VideoExercise 
+type: VideoExercise
+key: 4070242f87
 lang: r
-xp: 50 
+xp: 50
 skills: 1
-key: 4070242f87 
-video_link: //player.vimeo.com/video/280255549  
+video_link: //player.vimeo.com/video/280255549
 ```
+
 
 ---
 
@@ -21,30 +21,32 @@ video_link: //player.vimeo.com/video/280255549
 
 ```yaml
 type: VideoExercise
+key: 523f62e7ae
 lang: r
 xp: 50
 skills: 1
-key: 523f62e7ae
-video_link: "//player.vimeo.com/video/205124502"
+video_link: //player.vimeo.com/video/205124502
 ```
+
 
 ---
 
 ## Rainfall in Sonoma County and eBay sales
 
 ```yaml
-type: PureMultipleChoiceExercise 
+type: PureMultipleChoiceExercise
+key: f571c52e35
 lang: r
-xp: 50 
+xp: 50
 skills: 1
-key: f571c52e35   
 ```
-
 
 As mentioned in the video, rainfall in Sonoma County, California is highly correlated with eBay's total gross merchandise volume: 
 ![](https://assets.datacamp.com/production/repositories/1145/datasets/b97fef1a9b4ea4e8357ac2b39d04bf4c4e77cb34/ebayandsonomarainfall.png)
 
 Which of the following answers could support a **causal explanation** for this relationship?
+
+`@hint`
 
 
 `@possible_answers`
@@ -64,15 +66,16 @@ Which of the following answers could support a **causal explanation** for this r
 ## iPhone sales and eBay sales
 
 ```yaml
-type: PureMultipleChoiceExercise 
+type: PureMultipleChoiceExercise
+key: caffaa946e
 lang: r
-xp: 50 
+xp: 50
 skills: 1
-key: caffaa946e   
 ```
 
-
 Annual Apple iPhone sales are highly correlated with annual eBay sales. If this relationship is **spurious** (misleading and false), what might be causing this high correlation?
+
+`@hint`
 
 
 `@possible_answers`
@@ -92,41 +95,44 @@ Annual Apple iPhone sales are highly correlated with annual eBay sales. If this 
 ## A Quick Response
 
 ```yaml
-type: VideoExercise 
+type: VideoExercise
+key: 764f98ae81
 lang: r
-xp: 50 
+xp: 50
 skills: 1
-key: 764f98ae81 
-video_link: //player.vimeo.com/video/205124567  
+video_link: //player.vimeo.com/video/205124567
 ```
+
 
 ---
 
 ## Controlled Experiments
 
 ```yaml
-type: VideoExercise 
+type: VideoExercise
+key: 4745db858e
 lang: r
-xp: 50 
+xp: 50
 skills: 1
-key: 4745db858e 
-video_link: //player.vimeo.com/video/198212077  
+video_link: //player.vimeo.com/video/198212077
 ```
+
 
 ---
 
 ## Buying a New Phone: Controlled experiments
 
 ```yaml
-type: PureMultipleChoiceExercise 
+type: PureMultipleChoiceExercise
+key: ebe90c9c16
 lang: r
-xp: 50 
+xp: 50
 skills: 1
-key: ebe90c9c16   
 ```
 
-
 Laurel is in the market for a new phone after cracking the screen on her old one. Her next phone choice will be based on which is more durable: the WePhone 10S or the Universe S10. She looks at a YouTube channel video where the host buys one of each phone and tests how much force is needed to crush each phone with a hydraulic press. If every WePhone or Universe from the factory is truly identical and if the phones are tested under exactly the same condition, then is just one crushing test enough to determine durability?
+
+`@hint`
 
 
 `@possible_answers`
@@ -142,29 +148,28 @@ Laurel is in the market for a new phone after cracking the screen on her old one
 ## Let’s Code: Comparing Ratios
 
 ```yaml
-type: VideoExercise 
+type: VideoExercise
+key: 75688f61ad
 lang: r
-xp: 50 
+xp: 50
 skills: 1
-key: 75688f61ad 
-video_link: //player.vimeo.com/video/279737801  
+video_link: //player.vimeo.com/video/279737801
 ```
+
 
 ---
 
 ## Buying a New Phone: Comparing Ratios
 
 ```yaml
-type: NormalExercise 
+type: NormalExercise
+key: e157142b3a
 lang: r
-xp: 100 
+xp: 100
 skills: 1
-key: e157142b3a   
 ```
 
-
 Laurel's video showed that the WePhone 10S was stronger than the Universe S10. Laurel is now interested in what factors caused the WePhone 10S to be more durable than the Universe S10. Laurel examines the model specifications of each phone, and assumes that whichever specification is most different between the phones is the cause of their different durabilities.
-
 
 `@instructions`
 - 1) Examine the provided phone specifications in dataframe`PhoneSpecifications` and identify the specification that has the `largest ratio` between the WePhone 10S and the Universe S10
@@ -176,7 +181,6 @@ Laurel's video showed that the WePhone 10S was stronger than the Universe S10. L
 - For Solution2. The ratio of a specification between the WePhone 10S and Universe S10 can be calculated by dividing the specification value of the WePhone 10S by the specification value of the Universe S10. Make sure that your answer is not rounded. Use R's syntax to compute (for example, enter `Specification$X[1]/Specification$X[2]` where X is the specification.
 
 `@pre_exercise_code`
-
 ```{r}
 library(dplyr)
 library(data.table)
@@ -184,9 +188,7 @@ library(data.table)
 PhoneSpecifications<-data.frame(Phone=c("WePhone 10S","UniverseS10"),Weight=c(190,180),Battery_Capacity=c(4000,3500),Diagonal_Length=c(5.5,5.2),Storage=c(64,64),Luminance=c(800,550))
 ```
 
-
 `@sample_code`
-
 ```{r}
 # 1) To begin, let's print the contents of the dataframe to the console by entering the dataframe name, PhoneSpecifications, into the print() function.
 
@@ -202,9 +204,7 @@ PhoneSpecifications<-data.frame(Phone=c("WePhone 10S","UniverseS10"),Weight=c(19
 
 ```
 
-
 `@solution`
-
 ```{r}
 Solution1<-print(PhoneSpecifications)
 
@@ -218,9 +218,7 @@ Solution1<-print(PhoneSpecifications)
 Solution3<-max(Ratios)
 ```
 
-
 `@sct`
-
 ```{r}
 ex() %>% check_error()
 ex() %>% check_object("Solution1") %>% check_equal()
@@ -230,21 +228,21 @@ success_msg("Good work! Keep in mind, even though there is a correlation between
 ")
 ```
 
-
 ---
 
 ## Is it a Controlled Experiment?
 
 ```yaml
-type: PureMultipleChoiceExercise 
+type: PureMultipleChoiceExercise
+key: a880db44ea
 lang: r
-xp: 50 
+xp: 50
 skills: 1
-key: a880db44ea   
 ```
 
-
 As a staunch fiscal conservative, Peter is looking for ways to lower his daily expenses. Peter believes he might be able to lower his costs on car gasoline if he stops using his air conditioner and just opens his window. As an experiment, Peter tracks his gas usage during his commute to work over two days. During the first day, Peter uses his air conditioner. The second day, Peter opens his window. Is this a controlled experiment?
+
+`@hint`
 
 
 `@possible_answers`

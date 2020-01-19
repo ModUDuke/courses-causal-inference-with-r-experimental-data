@@ -6,45 +6,48 @@ description: 'These videos and exercises discuss common issues in carrying out e
 ## Important Issues in Experiment Design These Modules Ignore
 
 ```yaml
-type: VideoExercise 
+type: VideoExercise
+key: ef7f2e2846
 lang: r
-xp: 50 
+xp: 50
 skills: 1
-key: ef7f2e2846 
-video_link: //player.vimeo.com/video/198212060  
+video_link: //player.vimeo.com/video/198212060
 ```
+
 
 ---
 
 ## Other Issues in Experiments (Including Money & Ethics)
 
 ```yaml
-type: VideoExercise 
+type: VideoExercise
+key: 5f5a6d0023
 lang: r
-xp: 50 
+xp: 50
 skills: 1
-key: 5f5a6d0023 
-video_link: //player.vimeo.com/video/209272116  
+video_link: //player.vimeo.com/video/209272116
 ```
+
 
 ---
 
 ## Drawing Conclusions from Experiments
 
 ```yaml
-type: PureMultipleChoiceExercise 
+type: PureMultipleChoiceExercise
+key: e302f4bddd
 lang: r
-xp: 50 
+xp: 50
 skills: 1
-key: e302f4bddd   
 ```
-
 
 The transportation network company, Unter Technologies, is interested in increasing its revenue. Its CEO hypothesizes that the firm would generate substantially greater profits if it lowered its per-ride costs and profit margins. 
 
 Unter conducts an experiment on how its sales are sensitive to price reductions by offering a 25% discount for all of its services for one day. To their pleasant surprise, Unter sees a huge spike in sales and profits during the promotional day. 
 
 Seeing the results of this experiment, Unter's CEO decides that Unter should lower its prices permanently. Why might this conclusion be a bit hasty?
+
+`@hint`
 
 
 `@possible_answers`
@@ -64,17 +67,18 @@ Seeing the results of this experiment, Unter's CEO decides that Unter should low
 ## Generalizing Experimental Results
 
 ```yaml
-type: PureMultipleChoiceExercise 
+type: PureMultipleChoiceExercise
+key: fa050e19b1
 lang: r
-xp: 50 
+xp: 50
 skills: 1
-key: fa050e19b1   
 ```
-
 
 Unter's CEO is still convinced that lowering the prices of their services might increase the company's profits. He is hesitant to lower Unter's prices for a longer period, since the company would risk losing a great deal of income if the price-drop did not substantially increase revenue. 
 
 Therefore, to understand how a long-term price drop would affect Unter's profits, the CEO of Unter decides to drop the prices of their services in one city. Over the course of a year, Unter's profits in that city rose substantially. Unter's CEO is now convinced that he should drop Unter's prices nation-wide. Why might this conclusion still be too hasty?
+
+`@hint`
 
 
 `@possible_answers`
@@ -94,15 +98,16 @@ Therefore, to understand how a long-term price drop would affect Unter's profits
 ## Ethics in experiments
 
 ```yaml
-type: PureMultipleChoiceExercise 
+type: PureMultipleChoiceExercise
+key: 7c1f83a32b
 lang: r
-xp: 50 
+xp: 50
 skills: 1
-key: 7c1f83a32b   
 ```
 
-
 Which of the following causal questions is it possible to answer with a randomized experiment (without major ethical concerns)?
+
+`@hint`
 
 
 `@possible_answers`
@@ -122,13 +127,12 @@ Which of the following causal questions is it possible to answer with a randomiz
 ## Common Issues in Interpretation I: Box-and-Whisker Plots
 
 ```yaml
-type: MultipleChoiceExercise 
+type: MultipleChoiceExercise
+key: 9ca8c3a544
 lang: r
-xp: 50 
+xp: 50
 skills: 1
-key: 9ca8c3a544   
 ```
-
 
 Not only are there common issues in experiments, but there are many common ways that people misinterpret statistical results. Box-and-whisker plots (also known as box plots) are a great tool for summarizing data, but can be a source of confusion for new analysts. To refamiliarize yourself with boxplots, You can read our summary of them in the Chapter 5 exercise, "Practice working with eGulf," or on various websites, such as Wikipedia (https://en.wikipedia.org/wiki/Box_plot).
 
@@ -140,8 +144,10 @@ Following an experiment regarding how computer keyboard layouts affect people's 
 - The median hand size in the treatment group is identical to the median hand size in the control group.
 - [The mean hand size in the treatment group is identical to the mean hand size in the control group.]
 
-`@pre_exercise_code`
+`@hint`
 
+
+`@pre_exercise_code`
 ```{r}
 library(data.table)
 library(dplyr)
@@ -160,15 +166,8 @@ Treatment<-Control
   boxplot(Treatment,Control,names=c("Treatment","Control"),main="Hand Sizes (inches) across Experimental Groups")
 ```
 
-
-`@sample_code`
-
-```{r}
-boxplot(Treatment,Control,names=c("Treatment","Control"),main="Hand Sizes (inches) across Experimental Groups")
-```
-
-
 `@sct`
+```{r}
 msg1="The maximum value in both plots is indicated by the line above the whiskers. These are identical. Try again."
 msg2="The third quartile in both plots is indicated by the top edge of the boxes. These are identical. Try again."
 msg3="The median value in both plots is indicated by the thick line within the box. These are identical. Try again."
@@ -178,44 +177,47 @@ ex() %>% check_mc(4, feedback_msgs = c(msg1, msg2, msg3, msg4))
 
 
 
+```
+
 ---
 
 ## Let's Code: Common Issues II - Non-Normal Distributions
 
 ```yaml
-type: VideoExercise 
+type: VideoExercise
+key: 83164453d5
 lang: r
-xp: 50 
+xp: 50
 skills: 1
-key: 83164453d5 
-video_link: //player.vimeo.com/video/279737678  
+video_link: //player.vimeo.com/video/279737678
 ```
+
 
 ---
 
 ## Common Issues in Interpretation II: Non-Normal Distributions
 
 ```yaml
-type: NormalExercise 
+type: NormalExercise
+key: d411db8160
 lang: r
-xp: 100 
+xp: 100
 skills: 1
-key: d411db8160   
 ```
-
 
 Many statistical models assume that the data is normally distributed like in a bell curve, where a) most observations lie around the mean, b) the frequency of data that falls far from the mean is inversely related with its distance from the mean, and c) the distribution of observations above and below the mean are relatively identical. Often, results from experiments are non-normal, which can lead to spurious findings. Therefore, data transformations often need to be made to account for such problems.
 
 On the TV show, Kitchen Horrors, Bordon Hannity tries to revive failing restaurants by offering advice to their management and chefs. To measure the effectiveness of Hannity's efforts, a fan measures the average reviews of one of Hannity's revived restaurants before and after he offers them advice. With these results:
-
 
 `@instructions`
 - 1) Find the mean difference of the reviews before (`Reviews_Before`) and after (`Reviews_After`) Bordon Hannity's advice.
 - 2) Produce kernal density plots of the reviews with the functions `plot` and `density`.
 - 3) Determine whether the reviews are normally distributed
 
-`@pre_exercise_code`
+`@hint`
 
+
+`@pre_exercise_code`
 ```{r}
 library(data.table)
 library(dplyr)
@@ -224,9 +226,7 @@ Reviews_Before<-sample(c(rep(1,23),rep(2,34),rep(3,28),rep(4,6),rep(5,34)))
 Reviews_After<-sample(c(rep(1,37),rep(2,4),rep(3,26),rep(4,44),rep(5,14)))
 ```
 
-
 `@sample_code`
-
 ```{r}
 # Note: It is best practice to explore your data before running any significance tests. However, let's be bad statisticians and dive into the results before we explore the data. The two review variables are measured on Likert scales, ranging from 1 to 5, where 1 signals that the reviewers strongly disliked the restaurant and 5 signals that reviewers strongly liked the restaurant. 
 
@@ -246,9 +246,7 @@ Reviews_After<-sample(c(rep(1,37),rep(2,4),rep(3,26),rep(4,44),rep(5,14)))
     
 ```
 
-
 `@solution`
-
 ```{r}
 Solution1<-mean(Reviews_Before)-mean(Reviews_After)
   plot(density(Reviews_Before))
@@ -256,9 +254,7 @@ Solution1<-mean(Reviews_Before)-mean(Reviews_After)
   Solution3<-"No"
 ```
 
-
 `@sct`
-
 ```{r}
 ex() %>% check_error()
 ex() %>% check_object("Solution1") %>% check_equal()
@@ -267,29 +263,28 @@ ex() %>% check_object("Solution3") %>% check_equal()
 success_msg("Good work! This is an easy call in this particular case, but if it's close then you'll want to try some statistical tests too. And it might provoke some healthy discussion with your colleagues!")
 ```
 
-
 ---
 
 ## Common Issues in Interpretation II: Non-Normal Distributions (2)
 
 ```yaml
-type: NormalExercise 
+type: NormalExercise
+key: 5b26b74b8c
 lang: r
-xp: 100 
+xp: 100
 skills: 1
-key: 5b26b74b8c   
 ```
 
-
 There are many ways to deal with data that are multimodal in order to get them to be normally distributed. A common strategy for dealing with data that are ordered on a Likert scale is to collapse the response options. This is feasible if we assume that it is not important to differentiate the degree of positive or negative feelings for a restaurant. In this case, we will want to collapse response options 1 and 2 into a single response option to represent negative opinions, and 4 and 5 into a single response option to represent positive opinions.
-
 
 `@instructions`
 - 1) Create a new variable that collapses Reviews_After variable into 3 points: negative, ambivalent, and positive.
 - 2) Run a t-test that compares the treatment and control with the new ratings scale, and look at the p value.
 
-`@pre_exercise_code`
+`@hint`
 
+
+`@pre_exercise_code`
 ```{r}
 library(data.table)
 library(dplyr)
@@ -299,9 +294,7 @@ Reviews_Before<-sample(c(rep(1,23),rep(2,34),rep(3,28),rep(4,6),rep(5,34)))
 Reviews_After<-sample(c(rep(1,37),rep(2,4),rep(3,26),rep(4,44),rep(5,14)))
 ```
 
-
 `@sample_code`
-
 ```{r}
 # Note: We want to create a new variable with three parameters, where 1= Negative (1 or 2), 2= Ambivalent (3), and 3= Positive (4 or 5). To do this for the Reviews_Before variable, we can use the ifelse function. The first line of the below syntax says, if Reviews_Before is equal to 1 or 2, set Reviews_Before to 1, otherwise just return Reviews_Before. The following lines can be interpreted similarly.
 
@@ -319,9 +312,7 @@ Reviews_After<-sample(c(rep(1,37),rep(2,4),rep(3,26),rep(4,44),rep(5,14)))
     
 ```
 
-
 `@solution`
-
 ```{r}
 Reviews_Before<-ifelse(Reviews_Before==1 | Reviews_Before==2,1,Reviews_Before)
     Reviews_Before<-ifelse(Reviews_Before==3,2,Reviews_Before) 
@@ -332,54 +323,52 @@ Reviews_Before<-ifelse(Reviews_Before==1 | Reviews_Before==2,1,Reviews_Before)
     t.test(Reviews_After,Reviews_Before)
 ```
 
-
 `@sct`
-
 ```{r}
 ex() %>% check_error()
 
 success_msg("Good work! If we assume that the difference in respondent's degrees of positive or negative feelings towards the restaurant are non-meaningful, we can conclude that Hannity's restaurant revival is effective (i.e. it increases the number of postive versus negative reviews). If the degree of positive or negative feelings towards restaurants are meaningful, then we do not have enough information to reject the null hypothesis (i.e. evidence does not support the claim that Hannity's contributions leads restaurants to get better reviews")
 ```
 
-
 ---
 
 ## Let's Code: Common Issues III - Outliers
 
 ```yaml
-type: VideoExercise 
+type: VideoExercise
+key: 970feae737
 lang: r
-xp: 50 
+xp: 50
 skills: 1
-key: 970feae737 
-video_link: //player.vimeo.com/video/279737696  
+video_link: //player.vimeo.com/video/279737696
 ```
+
 
 ---
 
 ## Common Issues in Interpretation III: Outliers
 
 ```yaml
-type: NormalExercise 
+type: NormalExercise
+key: 12e1bc32a2
 lang: r
-xp: 100 
+xp: 100
 skills: 1
-key: 12e1bc32a2   
 ```
-
 
 Outliers are another common source of causal misinpretation that often confound results. An outlier is an observation that has a very distant parameter or outcome from other observations. In this question, we will learn how to identify and handle outliers. 
 
 In a previous exercise, we examined an experiment conducted by the popular online auctioneer, eGulf, where a random sample of dedicated sellers of used WePhones was drawn. This sample only included eGulf sellers who typically post 10 pictures of their used WePhones. As an experimental treatment, eGulf temporarily allowed some of these sellers to post up to 15 pictures for each auction of their WePhones, and measured whether posting more than 10 pictures affected final WePhone sales prices. In this exercise, eGulf conducted their experiment again. Their sample size seems sufficiently large (N=350), and the mean sales prices of users in the treatment group also seem substantially higher than in the control group. But are they? Follow the code in the workspace to identify and correct for outliers.
-
 
 `@instructions`
 - Create boxplots of the final sales prices for the treatment and control groups.
 - Identify and remove the outliers from the sample.
 - Examine the mean difference between the Treatment and Control group.
 
-`@pre_exercise_code`
+`@hint`
 
+
+`@pre_exercise_code`
 ```{r}
 library(data.table)
 library(dplyr)
@@ -407,9 +396,7 @@ colnames(eGulf) <- c("Seller_Feedback_Count","Seller_Feedback_Score")
     eGulf<-eGulf[order(eGulf$temp),]
 ```
 
-
 `@sample_code`
-
 ```{r}
 # Note: Although it's generally recommended to explore your data before running any statistical tests on it, for the sake of learning, let's naively estimate the average treatment effect on final sales prices with a t-test.
 
@@ -430,23 +417,17 @@ colnames(eGulf) <- c("Seller_Feedback_Count","Seller_Feedback_Score")
    
 ```
 
-
 `@solution`
-
 ```{r}
 Solution1<- boxplot(eGulf$Final_Sales_Price[eGulf$Treatment==1],eGulf$Final_Sales_Price[eGulf$Treatment==0])
 eGulf<-eGulf[eGulf$Final_Sales_Price<=1500,]
 Solution3<-mean(eGulf$Final_Sales_Price[eGulf$Treatment==1])-mean(eGulf$Final_Sales_Price[eGulf$Treatment==0])
 ```
 
-
 `@sct`
-
 ```{r}
 ex() %>% check_error()
 ex() %>% check_object("Solution1") %>% check_equal()
 ex() %>% check_object("Solution3") %>% check_equal()
 success_msg("Good work! When you removed the outliers from the data, the mean difference was much smaller between the treatment and control group. This is a problem that comes up often in data analysis.")
 ```
-
-

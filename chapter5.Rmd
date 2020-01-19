@@ -6,28 +6,30 @@ description: 'These videos and exercises discuss the issue of noncompliance in e
 ## Noncompliance in Experiments
 
 ```yaml
-type: VideoExercise 
+type: VideoExercise
+key: a5a7d9f747
 lang: r
-xp: 50 
+xp: 50
 skills: 1
-key: a5a7d9f747 
-video_link: //player.vimeo.com/video/198212091  
+video_link: //player.vimeo.com/video/198212091
 ```
+
 
 ---
 
 ## Ways to Deal with Noncompliance
 
 ```yaml
-type: PureMultipleChoiceExercise 
+type: PureMultipleChoiceExercise
+key: c896674673
 lang: r
-xp: 50 
+xp: 50
 skills: 1
-key: c896674673   
 ```
 
-
 Which one of the following approaches is *NOT* a way to deal with treatment noncompliance?
+
+`@hint`
 
 
 `@possible_answers`
@@ -44,24 +46,21 @@ Which one of the following approaches is *NOT* a way to deal with treatment nonc
 - Intention to Treat Analysis is definitely a common way to deal with noncompliance, and we're looking for a way that is **NOT** appropriate, so try again.
 - Assuming Random Compliance is not always applicable, but it is nonetheless commonly used to deal with noncompliance, so try again.
 
-
 ---
 
 ## A Refresher on eGulf Auctions Experiment and Confidence Intervals
 
 ```yaml
-type: MultipleChoiceExercise 
+type: MultipleChoiceExercise
+key: 84487e1a9f
 lang: r
-xp: 50 
+xp: 50
 skills: 1
-key: 84487e1a9f   
 ```
-
 
 Let's go back to our experiment with eGulf, the popular online auctioneer. In a previous exercise, we found that sellers on eGulf who posted more than 10 pictures of their WePhones during auctions (the treatment group) had higher sales prices than sellers who only posted 10 pictures of their WePhones (the control group). eGulf wanted to make sure these results were not spurious by conducting their experiment a second time, now with a larger sample. 
 
 The results of this second experiment were visualized as a bar graph, with 95% confidence intervals indicated by error bars. Based on these results, shown in the R workspace, what can we conclude about the Average Treatment Effect (ATE)?
-
 
 `@possible_answers`
 - The ATE is not statistically significant at a 95% confidence interval.
@@ -70,6 +69,7 @@ The results of this second experiment were visualized as a bar graph, with 95% c
 - The ATE is statistically significant at a 99% confidence interval.
 
 `@hint`
+
 
 `@pre_exercise_code`
 ```{r}
@@ -109,10 +109,8 @@ colnames(eGulf) <- c("Seller_Offered_Treatment","Seller_Opted_Into_Treatment","S
   arrows(x0=barplot(Means,ylim=c(325, 375),col=c(3,5)), y0=Means-(1*CIs), y1=Means+(1*CIs), code=3, angle=90,length=.4)
 ```
 
-`@sample_code`
-
-
 `@sct`
+```{r}
 msg1="Do the error bars overlap? Look carefully at the graph and try again."
 msg2="YThe graph does not show error bars for the 99% confidence interval, so no conclusion can be made about the statistical significance of the ATE at the 99% confidence interval. Try again."
 msg3="Correct! Since the 95% confidence interval error bars do not appear to overlap, we can conclude that the difference is statistically significant at the 95% confidence level."
@@ -121,36 +119,37 @@ ex() %>% check_mc(3, feedback_msgs = c(msg1, msg2, msg3, msg4))
 
 
 
+```
+
 ---
 
 ## Let's Code: Noncompliance in eGulf Data
 
 ```yaml
-type: VideoExercise 
+type: VideoExercise
+key: f309deee16
 lang: r
-xp: 50 
+xp: 50
 skills: 1
-key: f309deee16 
-video_link: //player.vimeo.com/video/279737646  
+video_link: //player.vimeo.com/video/279737646
 ```
+
 
 ---
 
 ## eGulf Auctions Experiment: Noncompliance
 
 ```yaml
-type: NormalExercise 
+type: NormalExercise
+key: ac78544021
 lang: r
-xp: 100 
+xp: 100
 skills: 1
-key: ac78544021   
 ```
-
 
 In a previous exercise, we found that sellers on eGulf who posted more than 10 pictures of their WePhones during auctions had higher sales prices. However, we never examined whether noncompliance could have confounded our results. Specifically, was there some systematic difference between the sellers who chose to post more than 10 pictures of their WePhones and those who chose to post less than 10 pictures? 
 
 If an outcome variable is associated with systematic difference between compliers and noncompliers, our observed treatment effect may be spurious. Therefore, let's test whether compliance was associated with any traits among the sellers, and whether such traits were associated with final sales prices. With the dataset `eGulf`:
-
 
 `@instructions`
 - 1) Test whether sellers who were offered treatment *and* opted into the treatment had different prior average feedback scores than sellers who were offered treatment but did *not* opt into treatment (tracked with `Seller_Offered_Treatment`, `Seller_Opted_Into_Treatment`, and `Seller_Feedback_Score`)
@@ -162,7 +161,6 @@ If an outcome variable is associated with systematic difference between complier
 - Use the `t.test` function where (mu=0) to statistically test whether the treatment and control group are different from each other.
 
 `@pre_exercise_code`
-
 ```{r}
 library(data.table)
 library(dplyr)
@@ -186,9 +184,7 @@ colnames(eGulf) <- c("Seller_Offered_Treatment","Seller_Opted_Into_Treatment","S
     eGulf$Final_Sales_Price<-round(rlnorm(n, meanlog=log(400), sdlog = log(1.2))*eGulf$Seller_Feedback_Score)
 ```
 
-
 `@sample_code`
-
 ```{r}
 # Note: To check for noncompliance in an experiment, we will only want to examine individuals that were offered treatment. It might make the following questions easier if you first subset the eGulf data.frame to sellers who were offered treatment as we did in eGulf2. Additionally, before running a significance test to see whether compliers and noncompliers were different, we recommend running the code below to summarize the data. 
 
@@ -210,9 +206,7 @@ colnames(eGulf) <- c("Seller_Offered_Treatment","Seller_Opted_Into_Treatment","S
     
 ```
 
-
 `@solution`
-
 ```{r}
 eGulf2<-eGulf[eGulf$Seller_Offered_Treatment==1,]
 
@@ -228,9 +222,7 @@ Solution2<-ifelse(Significant==T,"Yes","No")
 cor(eGulf$Seller_Feedback_Score,eGulf$Final_Sales_Price)
 ```
 
-
 `@sct`
-
 ```{r}
 ex() %>% check_error()
 ex() %>% check_object("Solution2") %>% check_equal()
@@ -238,36 +230,37 @@ ex() %>% check_object("Solution2") %>% check_equal()
 success_msg("Good work! It looks like sellers who posted more photos tended to have higher prior average feedback scores than those who did not post more photos. Additionally, prior average feedback scores were positively correlated with final WePhone sales prices. Since compliers and non-compliers have different feedback scores, and feedback scores are associated with final sales prices, we have more reason to worry that the experiment's results were spurious. While the experiment had intended to estimate whether posting more photos caused sellers to attain higher sales prices, the experiment might have just shown that sellers who care about customer feedback tend to sell their goods at high prices, and would be willing to post more photos on their ebay auctions if they were given the chance.")
 ```
 
-
 ---
 
 ## Survey Noncompliance
 
 ```yaml
-type: VideoExercise 
+type: VideoExercise
+key: db0bf3e371
 lang: r
-xp: 50 
+xp: 50
 skills: 1
-key: db0bf3e371 
-video_link: //player.vimeo.com/video/198212102  
+video_link: //player.vimeo.com/video/198212102
 ```
+
 
 ---
 
 ## Offering a Higher Credit Card Limit: Quantifying Noncompliance Concerns
 
 ```yaml
-type: PureMultipleChoiceExercise 
+type: PureMultipleChoiceExercise
+key: 1557ba9536
 lang: r
-xp: 50 
+xp: 50
 skills: 1
-key: 1557ba9536   
 ```
-
 
 CreditCo, a large credit card company, decides to run an experiment. It sends an offer in the mail to a random group of 50% of its customers: those in the treatment group are invited to navigate to a webpage and opt in for a 10% higher credit limit. CreditCo wants to see how credit balances and late payments are impacted six months later as a result of the experiment. 
 
 Suppose that, of the group that received the mail offer, 40% of people opted in. Do you think that noncompliance will be a problem for CreditCo's analysis? Why or why not?
+
+`@hint`
 
 
 `@possible_answers`
@@ -282,37 +275,35 @@ Suppose that, of the group that received the mail offer, 40% of people opted in.
 - While high compliance rates indicate a lower noncompliance problem, the rate of 40% in this situation is likely to be problematic.
 - Correct! In this situation, researchers at CreditCo should be worried about the spending habits of those who opted in to the offer.
 
-
 ---
 
 ## Let's Code: Working with Noncompliance
 
 ```yaml
-type: VideoExercise 
+type: VideoExercise
+key: f6472f88d4
 lang: r
-xp: 50 
+xp: 50
 skills: 1
-key: f6472f88d4 
-video_link: //player.vimeo.com/video/279737627  
+video_link: //player.vimeo.com/video/279737627
 ```
+
 
 ---
 
 ## Offering a Higher Credit Card Limit: Working with Noncompliance
 
 ```yaml
-type: NormalExercise 
+type: NormalExercise
+key: a00d1ebc4c
 lang: r
-xp: 100 
+xp: 100
 skills: 1
-key: a00d1ebc4c   
 ```
-
 
 Let's continue with the CreditCo dataset described in the previous exercise. The CFO has assigned you to figure out the average treatment effect of taking a credit line increase offer on late payments (`default_post`), and he wants to see something before lunch. You realize that you can give him a simple result: you just need to do some quick checks for balance in your samples and compute a "naive" average treatment effect to get the analysis started.
 
 A simulated version of this dataset, `CreditCo`, is available in the workspace.  With that data:
-
 
 `@instructions`
 - 1) See if treatment and control groups (`offered`) are of equal size.
@@ -324,7 +315,6 @@ A simulated version of this dataset, `CreditCo`, is available in the workspace. 
 - Remember to select the appropriate sample when computing the opt-in rate of the credit offer.
 
 `@pre_exercise_code`
-
 ```{r}
 library(data.table)
 library(dplyr)
@@ -386,9 +376,7 @@ library(dplyr)
   CreditCo <- CreditCo[,c("id","offered","opt_in","FICO","female","race_white","default_pre","default_post","balance_pre","balance_post")]
 ```
 
-
 `@sample_code`
-
 ```{r}
 # The dataset `CreditCo` is available in your workspace. You may want to explore it with the structure "str" command before solving the following questions.
 
@@ -407,9 +395,7 @@ library(dplyr)
     
 ```
 
-
 `@solution`
-
 ```{r}
 #1
   mean(CreditCo$offered)
@@ -419,9 +405,7 @@ library(dplyr)
   Solution3<-mean(CreditCo$default_post[CreditCo$opt_in==1])-mean(CreditCo$default_post[CreditCo$offered==0])
 ```
 
-
 `@sct`
-
 ```{r}
 ex() %>% check_error()
 ex() %>% check_object("Solution2") %>% check_equal()
@@ -429,5 +413,3 @@ ex() %>% check_object("Solution3") %>% check_equal()
 
 success_msg("Nice job! As you can see, about half of the sample received an offer, but only about 41% of people actually accepted it. For the people who complied, the 'naive' treatment effect is a +26% default rate--the default rate went up for people who accepted the offer! However, while this 'naive' ATE is quick to calculate, it's probably not accurate, as there are likely confounders that we can deal with when we have more time.")
 ```
-
-
