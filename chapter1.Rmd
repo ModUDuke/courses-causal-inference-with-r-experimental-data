@@ -172,7 +172,7 @@ skills: 1
 Laurel's video showed that the WePhone 10S was stronger than the Universe S10. Laurel is now interested in what factors caused the WePhone 10S to be more durable than the Universe S10. Laurel examines the model specifications of each phone, and assumes that whichever specification is most different between the phones is the cause of their different durabilities.
 
 `@instructions`
-- 1) Examine the provided phone specifications in dataframe`PhoneSpecifications` and identify the specification that has the `largest ratio` between the WePhone 10S and the Universe S10
+- 1) Examine the provided phone specifications in dataframe `PhoneSpecifications` and identify the specification that has the `largest ratio` between the WePhone 10S and the Universe S10
 - 2) Write out the `name` of that specification
 - 3) Write out the `size` of this ratio (expressed as a quotient)
 
