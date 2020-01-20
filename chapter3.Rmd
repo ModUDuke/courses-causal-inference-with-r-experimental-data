@@ -121,8 +121,8 @@ One of the most interesting results of any experiment is the Average Treatment E
 
 `@instructions`
 - What is the mean value of positive screening in the control group?
-- What is the average treatment effect of medicaid coverage on positive screening? 
-- Given the mean value of positive screening in the control group and the average treatment effect of medicaid coverage on positive screening, estimate the mean value of positive screening in the treatment group.
+- What is the average treatment effect of Medicaid coverage on positive screening? 
+- Given the mean value of positive screening in the control group and the average treatment effect of Medicaid coverage on positive screening, estimate the mean value of positive screening in the treatment group.
 
 `@hint`
 - You can calculate the mean value of positive screening in the treatment group by adding the mean value in the control group with the average treatment effect.
