@@ -6,34 +6,32 @@ description: 'These videos and exercises introduce randomized experiments, and e
 ## Randomized Experiments
 
 ```yaml
-type: VideoExercise
-key: 9e9326a35b
+type: VideoExercise 
 lang: r
-xp: 50
+xp: 50 
 skills: 1
-video_link: //player.vimeo.com/video/198212082
+key: 9e9326a35b 
+video_link: //player.vimeo.com/video/198212082  
 ```
-
 
 ---
 
 ## Buying a New Phone: Experimental design
 
 ```yaml
-type: PureMultipleChoiceExercise
-key: 243af9a90f
+type: PureMultipleChoiceExercise 
 lang: r
-xp: 50
+xp: 50 
 skills: 1
+key: 243af9a90f   
 ```
+
 
 Laurel is wondering if it would be more realistic to test phone durability through a bending test rather than a crushing test. To find out, she convinces four of her friends to join her at an electronics store and bend one of the two phones for a duration of 1 minute each. 
 
 Two of her friends really want to try to bend the Universe S10, so Laurel assigns those two friends to bend the Universe S10, and her other two friends try bending the WePhone 10S. 
 
 The Universe S10 was bent about 2 degrees more than the WePhone 10, so Laurel concludes that the average treatment effect of the WePhone 10S on bendability is -2 degrees. Of the following, which is the most problematic design error in this experiment?
-
-`@hint`
 
 
 `@possible_answers`
@@ -53,16 +51,15 @@ The Universe S10 was bent about 2 degrees more than the WePhone 10, so Laurel co
 ## Buying a New Phone: Sampling
 
 ```yaml
-type: PureMultipleChoiceExercise
-key: 1c689745b7
+type: PureMultipleChoiceExercise 
 lang: r
-xp: 50
+xp: 50 
 skills: 1
+key: 1c689745b7   
 ```
 
-If Laurel was interested in what proportion of the U.S. population could bend a WePhone 10S at least 1 degree with their hands, which group would serve as a better sample?
 
-`@hint`
+If Laurel was interested in what proportion of the U.S. population could bend a WePhone 10S at least 1 degree with their hands, which group would serve as a better sample?
 
 
 `@possible_answers`
@@ -82,40 +79,39 @@ If Laurel was interested in what proportion of the U.S. population could bend a 
 ## Let’s Code: Practice Identifying Imbalance
 
 ```yaml
-type: VideoExercise
-key: 212a7368fd
+type: VideoExercise 
 lang: r
-xp: 50
+xp: 50 
 skills: 1
-video_link: //player.vimeo.com/video/279737786
+key: 212a7368fd 
+video_link: //player.vimeo.com/video/279737786  
 ```
-
 
 ---
 
 ## Selling Old Phones: Looking for Balance
 
 ```yaml
-type: NormalExercise
-key: 87c93c97ab
+type: NormalExercise 
 lang: r
-xp: 100
+xp: 100 
 skills: 1
+key: 87c93c97ab   
 ```
+
 
 Laurel has saved all of the wePhones that she has broken and she now wants to auction them off on eBay. However, Laurel is uncertain what base-auction price to set for her broken WePhones. 
 
 To determine what price to set at the beginning of her WePhone auctions, Laurel conducts a new experiment: Laurel grabs a random sample of broken WePhones from her closet, and randomly assigns them to a treatment group (WePhones to be base priced at $10), and a control group (WePhones to be base priced at $5). Laurel's end goal is to determine whether her sample is unbalanced. Using the dataframe `WePhones`:
 
+
 `@instructions`
-- 1) Take a look at the structure of dataframe `WePhones` with the `str` function.
+- 1) Take a look at the structure of dataframe `WePhones` with the "str" function.
 - 2) Subset the WePhones dataframe into two new dataframes, one for `WePhones` in the treatment, titled `Treatment` and one for WePhones in the control titled `Control`.
 - 3) Calculate the percent of phones in the treatment group and control group that are "Black" with the mean function.
 
-`@hint`
-
-
 `@pre_exercise_code`
+
 ```{r}
 library(plyr)
 # Initialize dataframe
@@ -143,40 +139,34 @@ library(plyr)
     WePhones$Condition<-as.factor(ifelse(WePhones$Condition==1,"Broken","In_Pieces"))
 ```
 
+
 `@sample_code`
+
 ```{r}
-# 1) We will practice identifying whether the treatment and control are different for Color. First, take a look at the structure of the dataframe with the `str` function. Insert the word `WePhones` in the structure function below.
-
+# 1) Let's practice identifying whether the treatment and control are different for Color. First, take a look at the structure of the dataframe with the "str" function. Insert the word `WePhones` inbetween the structure function
     str() 
-
-# 2) Notice that each variable is a factor with two levels. For ease of computation, we will subset the WePhones dataframe into two new dataframes, one for WePhones in the treatment, and one for WePhones in the control. We provide syntax for creating how to make a dataframe of just the treatment group. Use this example to create a dataframe for just the control titled `Control`.
-
+# 2) Notice that each variable is a factor with two levels. For ease of computation, let's subset the WePhones dataframe into two new dataframes, one for WePhones in the treatment, and one for WePhones in the control. We provide syntax for creating how to make a dataframe of just the treatment group. Use this example to create a dataframe for just the control titled `Control`
     Treatment<-WePhones[WePhones$Treatment==1,]
-    Control<-
-
-# 3) Now, we will calculate the percent of phones in the treatment group and control group that are "Black". We provide an example of how to do this for the Treatment group. Use this sample code again for our `Control` dataframe.
+# 3) Now, let's calculate the percent of phones in the treatment group and control group that are "Black". We provide an example of how to do this for the Treatment group.
     
     mean(Treatment$Color=="Black")
-    mean()
-    
-# This is one way we can examine the means in both groups.
     
 ```
 
+
 `@solution`
+
 ```{r}
 str(WePhones) 
     Control<-WePhones[WePhones$Treatment==0,]
-    mean(Treatment$Color=="Black")
     mean(Control$Color=="Black")
 ```
 
+
 `@sct`
+
 ```{r}
 ex() %>% check_error()
-ex() %>% check_object("Control") %>% check_equal()
-
-
 success_msg("Good work! Exploring your new data before diving into deeper questions is a critical step for conducting statistical analyses. The number of Black and White WePhones in the previous question looked different, but are they? Let's do the next question to find out!")
 ```
 
@@ -186,12 +176,13 @@ success_msg("Good work! Exploring your new data before diving into deeper questi
 ## Selling Old Phones: Identifying Imbalance
 
 ```yaml
-type: NormalExercise
-key: e97cd6d50d
+type: NormalExercise 
 lang: r
-xp: 100
+xp: 100 
 skills: 1
+key: e97cd6d50d   
 ```
+
 
 Now that we are familiar with Laurel's WePhones dataset, we need to do some balance checks between the treatment and control groups. To do that, let’s try something clever: let’s start by assuming our variables are balanced across the groups, and then look for any variables that are statistically *unbalanced*. 
 
@@ -201,16 +192,13 @@ We’ll start by checking to see if the groups are balanced on the colors of the
 
 Using the data frame `WePhones`:
 
+
 `@instructions`
 - 1) Use the `t.test` function to find out if the `Treatment` and `Control` groups have the same number of `Black` WePhones.
-- 2) If that is statistically balanced, look at the names of all of the variables in our dataframes.
-- 3) Manually examine the data frames to find any variable that is imbalanced between the `Treatment` and `Control` groups.
-- 4) Write down the name of the imbalanced variable.
-
-`@hint`
-
+- 2) If that is statistically balanced, examine the data frame to find any variable that is imbalanced between the`Treatment` and `Control` groups.
 
 `@pre_exercise_code`
+
 ```{r}
 library(dplyr)
 library(data.table)
@@ -237,44 +225,30 @@ library(data.table)
     WePhones$Model<-as.factor(ifelse(WePhones$Model==1,"8","7"))
     WePhones$Network<-as.factor(ifelse(WePhones$Network==1,"Mendizon","Trot"))
     WePhones$Condition<-as.factor(ifelse(WePhones$Condition==1,"Broken","In_Pieces"))
-
     Treatment<-WePhones[WePhones$Treatment==1,]
     Control<-WePhones[WePhones$Treatment==0,]
     mean(Treatment$Color=="Black")
     mean(Control$Color=="Black")
 ```
 
+
 `@sample_code`
+
 ```{r}
-# 1) Use the `t.test` function to find out if the `Treatment` and `Control` groups have the same proportion of `Black` WePhones. Replace the `x` and `y` in the following example with `Treatment$Color=="Black"` and `Control$Color=="Black"` respectively.
-
+# 1) Use the `t.test` function to find out if the `Treatment` and `Control` groups have the same proportion of `Black` WePhones. Replace the `x` and `y` in the following example with, `Treatment$Color=="Black"` and `Control$Color=="Black"` respectively.
     t.test(x,y)
-
 # The t.test function in R returns quite a lot of results, and the number we are looking for is listed in the second line of results with the label `t =`. That's the difference in the means of our two variables (while accounting for any different variances in the two groups). 
-
-# The t-test shows a difference in the number of black phones in each group, but is that difference statistically significant? Take a look at the p-value. Because the p-value is 0.46, which is well above .05, we can say that the difference is **NOT** statistically significant.
-
-# 2) So are there any variables that show a statistically significant amount of imbalance? To find out, let's first remind ourselves what variables are in these dataframes with the `str` command.
-
-    str()
-    
-# 3) Now use the `t.test` function to search through each variable in the `Treatment and `Control` groups until you find one that is imbalanced (i.e. where the probability that the mean difference between the specification in the treatment and control groups is less than 0.05). Here are a few blank lines to type in all of those commands, and be sure to hit the `Run Code` button in the browser to see the results.
-
-
-
-
-
-
-
-# Note: Again, the number we are looking for is listed in the second line of results with the label `t =`. That's the difference in the means of our two variables (while accounting for any different variances in the two groups). 
-
-# 4) Based on the results of these t-tests, write the name of the variable that is imbalanced between the control and treatment groups into Solution1.
-    
+# The t-test shows a difference in the number of black phones in each group, but is that difference statistically significant? Take a look at the p-value. Because the p-value is 0.46, which is well above .05, we can say that the difference is not statistically significant.
+# 2) So are there any variables that show a statistically significant amount of imbalance? Use the `t.test` function to search through each variable in the `Treatment and `Control` groups until you find one that is imbalanced (i.e. where the probability that the mean difference between the specification in the treatment and control groups is less than 0.05). Write the name of the unbalanced trait between control and treatment groups into Solution1.
+    t.test(  )
     Solution1<-""
-
+    
+# Note: Again, the number we are looking for is listed in the second line of results with the label `t =`. That's the difference in the means of our two variables (while accounting for any different variances in the two groups). 
 ```
 
+
 `@solution`
+
 ```{r}
 t.test(Treatment$Color=="Black",Control$Color=="Black")
 #This is how we solve this answer when the data are randomized, but an easier way to solve this questions is to look through each variable manually
@@ -285,14 +259,14 @@ for(i in 2:6){
   Solution1<-names(WePhones)[match(a[a<.05],a)+1]
 ```
 
+
 `@sct`
+
 ```{r}
 ex() %>% check_error()
 ex() %>% check_object("Solution1") %>% check_equal()
-
 success_msg("Good work! The methods for computing balance in this exercise are very common to experimental research. While we walked you through the steps this time, some of the later problems will be less guided. You may want to return to this exercise and look at how we computed imbalance if you ever get stuck in later ones.")
 ```
-
 
 
 ---
@@ -300,16 +274,15 @@ success_msg("Good work! The methods for computing balance in this exercise are v
 ## Statistical Inference
 
 ```yaml
-type: PureMultipleChoiceExercise
-key: 6ae426b824
+type: PureMultipleChoiceExercise 
 lang: r
-xp: 50
+xp: 50 
 skills: 1
+key: 6ae426b824   
 ```
 
-Under which scenario might an experimenter *not* need to use statistical inference to justify causal claims?
 
-`@hint`
+Under which scenario might an experimenter *not* need to use statistical inference to justify causal claims?
 
 
 `@possible_answers`
@@ -329,176 +302,174 @@ Under which scenario might an experimenter *not* need to use statistical inferen
 ## p Values, Confidence Intervals, and Hypothesis Tests
 
 ```yaml
-type: VideoExercise
-key: 76542ba835
+type: VideoExercise 
 lang: r
-xp: 50
+xp: 50 
 skills: 1
-video_link: //player.vimeo.com/video/205124286
+key: 76542ba835 
+video_link: //player.vimeo.com/video/205124286  
 ```
-
 
 ---
 
 ## Let's Code: Getting to Work with Confidence
 
 ```yaml
-type: VideoExercise
-key: 39b057a682
+type: VideoExercise 
 lang: r
-xp: 50
+xp: 50 
 skills: 1
-video_link: //player.vimeo.com/video/279737759
+key: 39b057a682 
+video_link: //player.vimeo.com/video/279737759  
 ```
-
 
 ---
 
 ## Getting to Work With Confidence: Visualize the Data
 
 ```yaml
-type: NormalExercise
-key: 907fdfb248
+type: NormalExercise 
 lang: r
-xp: 100
+xp: 100 
 skills: 1
+key: 907fdfb248   
 ```
 
+
 Donny doesn't like to wake up early, so he often arrives late to work. Donny blames his lateness on traffic. While Donny usually leaves home 10 minutes before work, and his commute takes 10 minutes on average, his commute often takes longer than 10 minutes. For a year, Donny, measures exactly how many minutes his morning commute takes, and records it in the vector `Commute`. Let's use this information to help Donny figure out when he should leave for work if he wants to arrive to work on time.
+
 
 `@instructions`
 - 1) Summarize the data in table form to see what information we have about Donny's commute.
 - 2) Visualize the data with a density plot to get a better sense for the distribution of his commute times.
 
-`@hint`
-
-
 `@pre_exercise_code`
+
 ```{r}
 library(dplyr)
 library(data.table)
-
 set.seed(1)
 #Create rnorm function that allows for min and max
   rtnorm <- function(n, mean, sd, min = -Inf, max = Inf){
       qnorm(runif(n, pnorm(min, mean, sd), pnorm(max, mean, sd)), mean, sd)
   }
 #Dataframe
-
 Commute<-round(rtnorm(n=200, mean=10, sd=5, min = 0, max = 60))
 ```
 
+
 `@sample_code`
+
 ```{r}
-# 1) We will first summarize Donny's commute time to get a sense of what the data looks like. Use the `summary` function on the dataframe `Commute`.
-
+# 1) Let's first summarize Donny's commute time to get a sense of what the data looks like. Use the summary function on the dataframe Commute.
     summary()
-
 # 2) It seems that Donny's travel time is usually less than 10 minutes, but it can last as long as 23 minutes! For additional information, let's also plot what Donny's commute time looks like on a density curve. This is just another way of representing Donny's commute time. Use the plot(density()) commands on the dataframe Commute.
-
     plot(density())
     
     
 ```
 
+
 `@solution`
+
 ```{r}
 summary(Commute)
 plot(density(Commute))
 ```
 
+
 `@sct`
+
 ```{r}
 ex() %>% check_error()
-
-success_msg("Good job! The Y axis, marked 'density', shows the proportion of times that Donny's travel time is a certain length, given by the x-axis. Based on Donny's previous commutes, about .08 or 8% of the time, Donny's travel takes exactly 9 minutes. Let's continue on this problem by trying to find a reasonable confidence interval that Donny should consider to give himself a safe time margin.")
+success_msg("Good job!  The Y axis, marked 'density', shows the proportion of times that Donny's travel time is a certain length, given by the x-axis. Based on Donny's previous commutes, about .08 or 8% of the time, Donny's travel takes exactly 9 minutes. Let's continue on this problem by trying to find a reasonable confidence interval that Donny should consider to give himself a safe time margin.")
 ```
+
 
 ---
 
 ## Getting to Work With Confidence: Choosing a Departure Time
 
 ```yaml
-type: NormalExercise
-key: 243a4bf8bb
+type: NormalExercise 
 lang: r
-xp: 100
+xp: 100 
 skills: 1
+key: 243a4bf8bb   
 ```
 
+
 Donny doesn't like to wake up early, so he often arrives late to work. Donny blames his lateness on traffic. While Donny usually leaves home 10 minutes before work and his commute takes 10 minutes on average, his commute often takes longer than that. For a year, Donny, measures exactly how many minutes his morning commute takes, and records it in the vector `Commute`. Let's use this information to help Donny figure out when he should leave for work if he wants to arrive to work on time.
+
 
 `@instructions`
 - 1) Assuming that Donny's sample is representative of the true distribution of commute times, use the vector `Commute` to determine how much time Donny should leave for his commute if he wants to arrive to work on time at least 95% of the time. 
 - 2) Since Donny's sample is subject to error, determine how much time Donny should leave for his commute if he wants to arrive to work on time approximately 50% of the time with 95% confidence.
 
-`@hint`
-
-
 `@pre_exercise_code`
+
 ```{r}
 library(dplyr)
 library(data.table)
-
 set.seed(1)
 #Create rnorm function that allows for min and max
   rtnorm <- function(n, mean, sd, min = -Inf, max = Inf){
       qnorm(runif(n, pnorm(min, mean, sd), pnorm(max, mean, sd)), mean, sd)
   }
 #Dataframe
-
 Commute<-round(rtnorm(n=200, mean=10, sd=5, min = 0, max = 60))
 ```
 
+
 `@sample_code`
+
 ```{r}
 # Note: The following questions are difficult, so we'll give you some hints about useful functions to determine the key values of the confidence intervals that Donny needs to know.
-
 # If you look closely at the numbers in the instructions, you'll see that Donny is looking for the 95% confidence interval for his commute time, whcih means we need to find out how many minutes that 95% of Donny's commutes take. The answer is simply the commute time that is greater or equal to 95% of the observations in the dataset. To solve this question, we would recommend using the "quantile" function. The quantile function requires two arguments, a variable (Commute) and a quantile to be returned (.95); that is, quantile(VARIABLE,QUANTILE)
-
 # 1) Determine how much time Donny should leave for his commute if he wants to arrive to work on time approximately 95% of the time. 
-
     Solution1<- 
   
 # Another way of stating Donny's main question is this: given our limited sample, at what time of the morning are we 95% confident that he could leave and have a 50% chance to make it to work on time? We can do this by examining the confidence interval on the *mean* of Donny's commute times; specifically, the upper bound of the mean's 95% confidence interval. The confidence interval of a mean is determined with the t.test function; the upper bound that we are interested in can be returned with t.test(VARIABLE)$conf.int[2]  
-
 # 2) Precisely how long should Donny leave himself if he wants to arrive to work on time at least 50% of the time, with 95% confidence? 
   
     Solution2<-
 ```
 
+
 `@solution`
+
 ```{r}
 Solution1<- quantile(Commute,.95) #95th quantile  
 Solution2<-t.test(Commute)$conf.int[2] #upper bound
 ```
 
+
 `@sct`
+
 ```{r}
 ex() %>% check_error()
 ex() %>% check_object("Solution1") %>% check_equal()
 ex() %>% check_object("Solution2") %>% check_equal()
-
 success_msg("Good job! Based on Donny's previous commutes, he can be fairly confident that he will get to work at least half the time if he allows himself 10.7 minutes to get there. Of course, this is assuming that the future traffic levels stays the same as the past traffic levels. If the traffic changes according to when Donny leaves, it would bias our results.")
 ```
+
 
 ---
 
 ## Sample Size
 
 ```yaml
-type: PureMultipleChoiceExercise
-key: d2fc3d44de
+type: PureMultipleChoiceExercise 
 lang: r
-xp: 50
+xp: 50 
 skills: 1
+key: d2fc3d44de   
 ```
+
 
 A professor was interested in whether myopia in children could be caused by environmental factors. He found a completely random sample of 10 children, and had 5 of them sleep with nightlights and 5 of them sleep without nightlights for the first 10 years of their lives. 
 
 All of the children who had slept with nightlights developed myopia, whereas only 2 of the children who did not sleep with nightlights developed myopia. From this study, the professor determined that the average treatment effect of using a nightlight on myopia was 5/5 - 2/5 = 3/5, or 60%. Why might the professor want to get a larger sample before publishing these results?
-
-`@hint`
 
 
 `@possible_answers`
@@ -518,16 +489,15 @@ All of the children who had slept with nightlights developed myopia, whereas onl
 ## Statistical Inference Across Disciplines
 
 ```yaml
-type: PureMultipleChoiceExercise
-key: e587a26773
+type: PureMultipleChoiceExercise 
 lang: r
-xp: 50
+xp: 50 
 skills: 1
+key: e587a26773   
 ```
 
-Let's say that you are an economics major, and your roommate is a chemistry major.  They're trying to figure out the results from an experiment run in the lab where they work as an RA, and ask you to look at the data because it looks "weird."  Given the differences between your disciplines, is there any point in trying to help?
 
-`@hint`
+Let's say that you are an economics major, and your roommate is a chemistry major.  They're trying to figure out the results from an experiment run in the lab where they work as an RA, and ask you to look at the data because it looks "weird."  Given the differences between your disciplines, is there any point in trying to help?
 
 
 `@possible_answers`
@@ -543,18 +513,17 @@ Let's say that you are an economics major, and your roommate is a chemistry majo
 ## Fishing for a Good Experimental Design
 
 ```yaml
-type: PureMultipleChoiceExercise
-key: 01b4c71047
+type: PureMultipleChoiceExercise 
 lang: r
-xp: 50
+xp: 50 
 skills: 1
+key: 01b4c71047   
 ```
+
 
 After fishing for a 30 consecutive days in the Atlantic ocean, Edgar, a professional bass fisherman, is asked by his 8 year old daughter, Rachel, why he can't just fish in a nearby lake. To keep his explanation simple, Edgar tells Rachel that the fish in the lake are much smaller than out at sea. Rachel is unconvinced, and tests her father's excuse through an experiment: she spends one day fishing off of a dock on the Atlantic ocean, and one day fishing off of a dock at her nearby lake. Rachel catches many fish during this experiment, but the size of the fish that Rachel caught at the lake were much larger than those caught at the Atlantic. 
 
 Rachel's experiment is problematic. Which of the following best describes the problem in Rachel's experimental design?
-
-`@hint`
 
 
 `@possible_answers`
@@ -569,23 +538,23 @@ Rachel's experiment is problematic. Which of the following best describes the pr
 - Correct! The fish one finds near a dock on the Atlantic Ocean are not necessarily (or likely) to be the same size as ones found deeper in the ocean. It's possible that Rachel's fishing spot at the lake is a better spot for catching large fish than her spot at the Atlantic Ocean, but this does not necessarily imply that fish in her lake are larger than fish in the Atlantic Ocean.
 - Non intuitive findings can be cause for worry, but aren't necessarily problematic. Try again.
 
+
 ---
 
 ## Problems with Convenience Sampling
 
 ```yaml
-type: PureMultipleChoiceExercise
-key: 870135287b
+type: PureMultipleChoiceExercise 
 lang: r
-xp: 50
+xp: 50 
 skills: 1
+key: 870135287b   
 ```
+
 
 Does income cause happiness? It is generally believed that income increases happiness for those who have less money. So a bump in income for a poor person is likely to increase his happiness much more than the same bump in income for a wealthy person. 
 
 Siggy, an academic psychologist, was interested in how one-time cash rewards affect happiness. Siggy decided to conduct an experiment by giving people a $10 bill, and then measuring the their corresponding change in happiness at that moment. If Siggy only conducted this experiment on college students (a demographic that is usually strapped for cash, but a convenient sample for academics to conduct experiments on), how might we expect it to bias his experiment's average treatment effect?
-
-`@hint`
 
 
 `@possible_answers`
