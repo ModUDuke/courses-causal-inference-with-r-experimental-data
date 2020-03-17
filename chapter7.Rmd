@@ -7,7 +7,7 @@ description: 'These videos and exercises introduce natural experiments, sometime
 
 ```yaml
 type: VideoExercise
-key: 355ed25bc9
+key:
 lang: r
 xp: 50
 skills: 1
@@ -21,7 +21,7 @@ video_link: //player.vimeo.com/video/199856738
 
 ```yaml
 type: PureMultipleChoiceExercise
-key: b3e25ee162
+key:
 lang: r
 xp: 50
 skills: 1
@@ -50,7 +50,7 @@ Which of the following is an accurate description of an "as-if" natural experime
 
 ```yaml
 type: VideoExercise
-key: 9269e44505
+key:
 lang: r
 xp: 50
 skills: 1
@@ -64,7 +64,7 @@ video_link: //player.vimeo.com/video/209272453
 
 ```yaml
 type: VideoExercise
-key: 9faee4ebd9
+key:
 lang: r
 xp: 50
 skills: 1
@@ -78,7 +78,7 @@ video_link: //player.vimeo.com/video/199856949
 
 ```yaml
 type: VideoExercise
-key: d8de59d6fa
+key:
 lang: r
 xp: 50
 skills: 1
@@ -92,7 +92,7 @@ video_link: //player.vimeo.com/video/279737546
 
 ```yaml
 type: NormalExercise
-key: a4e0df7635
+key:
 lang: r
 xp: 100
 skills: 1
@@ -173,7 +173,7 @@ success_msg("Good work! Identifying balance is crucial to justifying natural exp
 
 ```yaml
 type: VideoExercise
-key: 5dec6afcd9
+key:
 lang: r
 xp: 50
 skills: 1
@@ -187,7 +187,7 @@ video_link: //player.vimeo.com/video/199857027
 
 ```yaml
 type: VideoExercise
-key: 201eb1093a
+key:
 lang: r
 xp: 50
 skills: 1
@@ -201,7 +201,7 @@ video_link: //player.vimeo.com/video/279737522
 
 ```yaml
 type: NormalExercise
-key: 56b8de7778
+key:
 lang: r
 xp: 100
 skills: 1
@@ -287,7 +287,7 @@ success_msg("Good work! As you can see, the confidence interval is highly suscep
 
 ```yaml
 type: VideoExercise
-key: dc685a5444
+key:
 lang: r
 xp: 50
 skills: 1
@@ -301,7 +301,7 @@ video_link: //player.vimeo.com/video/199857584
 
 ```yaml
 type: PureMultipleChoiceExercise
-key: 5341ad7e2f
+key:
 lang: r
 xp: 50
 skills: 1
@@ -330,7 +330,7 @@ The effect of the property rights experiment was not statistically significant. 
 
 ```yaml
 type: VideoExercise
-key: 21fe78f4b4
+key:
 lang: r
 xp: 50
 skills: 1
@@ -344,7 +344,7 @@ video_link: //player.vimeo.com/video/279737505
 
 ```yaml
 type: NormalExercise
-key: 2d95aa10c6
+key:
 lang: r
 xp: 100
 skills: 1
@@ -466,7 +466,7 @@ success_msg("Good work! It looks like rain may have influenced whether customers
 
 ```yaml
 type: VideoExercise
-key: c6894f628a
+key:
 lang: r
 xp: 50
 skills: 1
@@ -480,7 +480,7 @@ video_link: //player.vimeo.com/video/199857705
 
 ```yaml
 type: VideoExercise
-key: 3ab612d821
+key:
 lang: r
 xp: 50
 skills: 1
